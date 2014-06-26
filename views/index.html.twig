@@ -1,8 +1,21 @@
 <html>
+	<head>
+		<style>
+			#save_to_spotify {
+				display: none;
+			}
+		</style>
+	</head>
 	<body>
-		<form method="POST" action="{{ url('artist-search') }}">
+		<form id="search_form" method="POST" action="{{ url('artist-search') }}">
 			<input type="text" name="artist_name" />
-			<input type="submit" value="Search" />
+			<input id="search" type="submit" value="Search" />
 		</form>
+		<button id="save_to_spotify">
+            Add this playlist to Spotify
+        </button>
+		<div id="results"></div>
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="/js/index.js"></script>
 	</body>
 </html>

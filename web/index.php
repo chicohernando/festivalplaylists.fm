@@ -66,16 +66,14 @@
 
 				$searchResults = Spotify::searchTrack(implode(' ', array($artist->name, $song->name)));
 				if (!empty($searchResults) && isset($searchResults->tracks[0])) {
-					//echo ltrim(ltrim(gmdate("i:s", $searchResults->tracks[0]->length), '0'), ':');exit;
 					$count++;
 					$s = new stdClass();
 					$s->name = $song->name;
 					$s->uri = $searchResults->tracks[0]->href;
+					$s->duration = ltrim(ltrim(gmdate("i:s", $searchResults->tracks[0]->length), '0'), ':');
 					$artist->songs[] = $s;
 				}
 			}
-
-			//echo "<pre>";print_r($artist);exit;
 		}
 
 		return $app['twig']->render('artist-search.html.twig', array(

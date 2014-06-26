@@ -1,7 +1,13 @@
-<div data-id="{{ artist.id }}" data-uri="{{ artist.uri }}">
+<div data-type="spotify-artist" data-id="{{ artist.id }}" data-uri="{{ artist.uri }}">
 	{{ artist.name }}
 	<br />
 	{% if artist.images[0] is not empty %}
-		<img src="{{ artist.images[0].url }}" />
+		<img src="{{ artist.images|last.url }}" />
 	{% endif %}
+
+	<ul>
+		{% for song in artist.songs %}
+			<li data-type="spotify-track" data-uri="{{ song.uri }}">{{ song.duration }} - {{ song.name }}</li>
+		{% endfor %}
+	</ul>
 </div>
