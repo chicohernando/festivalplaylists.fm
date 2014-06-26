@@ -1,0 +1,7 @@
+<div data-id="{{ artist.id }}" data-uri="{{ artist.uri }}">
+	{{ artist.name }}
+	<br />
+	{% if artist.images[0] is not empty %}
+		<img src="{{ artist.images[0].url }}" />
+	{% endif %}
+</div>
