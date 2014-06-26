@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
+
+@import "normalize";
+@import "variables";
+@import "mixins";
+@import "grid";
+@import "scaffolding";
+
+$teal: #56DED3;
+
+.festival-container {
+  background: url('../festival.png');
+  background-size: cover;
+  padding: 100px 0;
+  .container {
+    width: 70%;
+  }
+  p {
+    font-size: $baseFontSize + 4;
+    line-height: 26px;
+  }
+  form {
+    margin: 50px 0 0;
+    text-align: center;
+  }
+  input[type="text"] {
+    border: 0;
+    font-size: 20px;
+    padding: 7px 10px;
+    width: 270px;
+  }
+  input[type="submit"] {
+    background: #F5F5F5;
+    border: 0;
+    font-size: 20px;
+    padding: 7px 20px;
+    &:hover {
+      background: $teal;
+      color: #FFF;
+    }
+  }
+}
+
+.playlist-container {
+  background: $teal;
+  color: #FFF;
+  margin: 0px auto;
+  padding: 20px 0 40px;
+}
+
+.playlists {
+  font-size: $baseFontSize + 4;
+  width: 70%;
+  .row:first-child {
+    display: none;
+  }
+  .row {
+    margin: 20px auto;
+  }
+  .grid-4 {
+    font-weight: 500;
+    padding-top: 10px;
+    padding-right: 25px;
+    text-align: right;
+  }
+}
+
+ol.grid-8 {
+  border: 1px solid darken($teal, 7%);
+  font-size: $baseFontSize + 2;
+  list-style-position: inside;
+  margin: 0;
+  padding: 5px;
+  li {
+    padding: 2px 5px;
+  }
+}
+
+ol>li:nth-child(odd) {
+  background-color: darken($teal, 7%);
+}

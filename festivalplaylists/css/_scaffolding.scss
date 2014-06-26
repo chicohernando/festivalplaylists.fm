@@ -1,0 +1,30 @@
+// Body reset
+// -------------------------
+html {
+  font-size: 100%;
+  body {
+    font-size: $baseFontSize;
+    font-weight: 400;
+    line-height: $baseLineHeight;
+  }
+}
+
+// body reset
+body {
+  background-color: $bodyBackground;
+  color: lighten($textColor, 15);
+  font-family: $baseFontFamily;
+}
+
+// Links
+// -------------------------
+
+a {
+  color: $linkColor;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: $linkColorHover;
+  text-decoration: underline;
+}
