@@ -524,7 +524,7 @@ a:focus {
   text-decoration: underline; }
 
 .festival-container {
-  background: url("../festival.png");
+  background: url("../images/festival.png");
   background-size: cover;
   padding: 100px 0; }
   .festival-container .container {
@@ -555,14 +555,12 @@ a:focus {
   margin: 0px auto;
   padding: 20px 0 40px; }
 
-.playlists {
+.playlist {
   font-size: 18px;
   width: 70%; }
-  .playlists .row:first-child {
-    display: none; }
-  .playlists .row {
+  .playlist .row {
     margin: 20px auto; }
-  .playlists .grid-4 {
+  .playlist .grid-4 {
     font-weight: 500;
     padding-top: 10px;
     padding-right: 25px;

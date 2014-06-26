@@ -1,13 +1,19 @@
-<div data-type="spotify-artist" data-id="{{ artist.id }}" data-uri="{{ artist.uri }}">
-	{{ artist.name }}
-	<br />
-	{% if artist.images[0] is not empty %}
-		<img src="{{ artist.images|last.url }}" />
-	{% endif %}
-
-	<ul>
+<div class="row" data-type="spotify-artist" data-id="{{ artist.id }}" data-uri="{{ artist.uri }}">
+	<div class="grid-4">
+		{{ artist.name }}
+<!-- 		{% if artist.images[0] is not empty %}
+			<img src="{{ artist.images|last.url }}" />
+		{% endif %} -->
+	</div>
+	
+	<ol class="grid-8">
 		{% for song in artist.songs %}
-			<li data-type="spotify-track" data-uri="{{ song.uri }}">{{ song.duration }} - {{ song.name }}</li>
+			<li data-type="spotify-track" data-uri="{{ song.uri }}">
+				{{ song.name }}
+				<span>
+					{{ song.duration }}
+				</span>
+			</li>
 		{% endfor %}
-	</ul>
+	</ol>
 </div>
