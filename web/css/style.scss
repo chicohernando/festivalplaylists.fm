@@ -6,13 +6,12 @@
 @import "grid";
 @import "scaffolding";
 
-$teal: #56DED3;
-
 .festival-container {
   background: url('../images/festival.png') no-repeat center center;
   background-size: cover;
-  padding: 100px 0;
+  height: 100%;
   .container {
+    padding: 100px 0;
     width: 70%;
   }
   p {
