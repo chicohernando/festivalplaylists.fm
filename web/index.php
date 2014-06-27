@@ -61,7 +61,7 @@
 			$count = 0;
 			foreach ($songs as $song) {
 				if ($count >= 5) {
-					break;
+					break; 
 				}
 
 				$searchResults = Spotify::searchTrack(implode(' ', array($artist->name, $song->name)));

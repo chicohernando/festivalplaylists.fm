@@ -11,13 +11,21 @@ jQuery('#save_to_spotify').click(function(e) {
 		}).get();
 	}).get();
 	
-	console.log(spotify_track_uris);
+	var client_id = 'bde96cbd16ec44548ab77ce86e187654';
+	var redirect_uri = 'http://localhost:8000/callback.html';
+	var url = 'https://accounts.spotify.com/authorize?client_id=' + client_id +
+			  '&response_type=token' +
+			  '&scope=playlist-read-private%20playlist-modify%20playlist-modify-private' +
+			  '&redirect_uri=' + encodeURIComponent(redirect_uri);
+	localStorage.setItem('spotify_track_uris', JSON.stringify(spotify_track_uris));
+	localStorage.setItem('spotify_playlist_name', 'Hello World ' + (new Date()));
+	var w = window.open(url, 'chicohernando', 'WIDTH=400,HEIGHT=500');
 });
 
 jQuery('#search_form').submit(function(e) {
 	e.preventDefault();
 
-	var artist_name = jQuery('input[name=artist_name]').val()
+	var artist_name = jQuery('input[name=artist_name]').val();
 	if (artist_name !== '') {
 		console.log('Searching for songs by ' + artist_name);
 		jQuery.ajax({
