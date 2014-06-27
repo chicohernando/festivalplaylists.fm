@@ -525,6 +525,20 @@ a:focus {
   color: #0b5577;
   text-decoration: underline; }
 
+.btn {
+  background: #F5F5F5;
+  border: 0;
+  font-size: 20px;
+  padding: 7px 20px; }
+  .btn:hover {
+    background: #56ded3;
+    color: #FFF; }
+  .btn:active {
+    background: #41dacd; }
+
+.error {
+  color: #a74848; }
+
 .festival-container {
   background: url("../images/festival.png") no-repeat center center;
   background-size: cover;
@@ -543,20 +557,24 @@ a:focus {
     font-size: 20px;
     padding: 7px 10px;
     width: 270px; }
-  .festival-container input[type="submit"] {
-    background: #F5F5F5;
-    border: 0;
-    font-size: 20px;
-    padding: 7px 20px; }
-    .festival-container input[type="submit"]:hover {
-      background: #56ded3;
-      color: #FFF; }
+  .festival-container .form-help {
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 10px; }
 
 .playlist-container {
   background: #56ded3;
   color: #FFF;
   margin: 0px auto;
   padding: 20px 0 40px; }
+  .playlist-container .btn {
+    background: #023749;
+    color: #FFF; }
+    .playlist-container .btn:hover {
+      background: #023e53;
+      color: #dcde56; }
+    .playlist-container .btn:active {
+      background: #012430; }
 
 .playlist {
   font-size: 18px;

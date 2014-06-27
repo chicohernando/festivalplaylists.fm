@@ -16,14 +16,18 @@
 				</p>
 				<form id="search_form" method="POST" action="{{ url('artist-search') }}">
 					<input type="text" name="artist_name" placeholder="Enter an artist" />
-					<input id="search" type="submit" value="Get Songs" />
+					<input id="search" class="btn" type="submit" value="Get Songs" />
+					<div class="form-help">
+						<span>
+						</span>
+					</div>
 				</form>
 		    </div>
 		</div>
 
 		<div class="playlist-container">
 			<div class="container playlist" id="results">
-				<button id="save_to_spotify">
+				<button class="btn centered" id="save_to_spotify">
 		            Add this playlist to Spotify
 		        </button>
 

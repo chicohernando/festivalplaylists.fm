@@ -30,3 +30,23 @@ a:focus {
   color: $linkColorHover;
   text-decoration: underline;
 }
+
+// Buttons
+// -------------------------
+.btn {
+  background: #F5F5F5;
+  border: 0;
+  font-size: 20px;
+  padding: 7px 20px;
+  &:hover {
+    background: $teal;
+    color: #FFF;
+  }
+  &:active {
+    background: darken($teal, 5);
+  }
+}
+
+.error {
+  color: $red;
+}
