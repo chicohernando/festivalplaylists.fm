@@ -524,7 +524,7 @@ a:focus {
   text-decoration: underline; }
 
 .festival-container {
-  background: url("../images/festival.png");
+  background: url("../images/festival.png") no-repeat center center;
   background-size: cover;
   padding: 100px 0; }
   .festival-container .container {
