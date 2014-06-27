@@ -1,6 +1,10 @@
+// Additional Colors
+// -------------------------
+$teal: #56DED3;
+
 // Scaffolding
 // -------------------------
-$bodyBackground:        #fff !default;
+$bodyBackground:        $teal !default;
 $textColor:             #333 !default;
 
 // Typography
