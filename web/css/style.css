@@ -503,14 +503,16 @@ table {
   text-align: center; }
 
 html {
-  font-size: 100%; }
+  font-size: 100%;
+  height: 100%; }
   html body {
     font-size: 14px;
     font-weight: 400;
+    height: 100%;
     line-height: 20px; }
 
 body {
-  background-color: white;
+  background-color: #56ded3;
   color: #595959;
   font-family: "Raleway", Helvetica, Arial, sans-serif; }
 
@@ -526,8 +528,9 @@ a:focus {
 .festival-container {
   background: url("../images/festival.png") no-repeat center center;
   background-size: cover;
-  padding: 100px 0; }
+  height: 100%; }
   .festival-container .container {
+    padding: 100px 0;
     width: 70%; }
   .festival-container p {
     font-size: 18px;
