@@ -56,15 +56,12 @@ jQuery('#search_form').submit(function(e) {
 	var artist_name = jQuery('input[name=artist_name]').val();
 	if (artist_name !== '') {
 		jQuery('.form-help span').removeClass("error").show().text("Searching for songs by " + artist_name + "...");
-		console.log('Searching for songs by ' + artist_name);
 		jQuery.ajax({
 			url: jQuery(this).attr('action'),
 			type: jQuery(this).attr('method'),
 			data: jQuery(this).serialize(),
 			dataType: 'text',
 			success: function(response) {
-				//console.log(response);
-				// jQuery('.festival-container').animate({height: "auto"});
 				jQuery(".festival-container").animateAuto("height", 500); 
 				jQuery('[data-id=save-to-spotify]').css('display', 'block');
 				jQuery('#results').prepend(response);
@@ -75,7 +72,6 @@ jQuery('#search_form').submit(function(e) {
 				}
 			},
 			error: function(response) {
-				console.log('Error');
 				jQuery('.form-help span').addClass("error").text("Sorry, something went wrong. Please try again.");
 				console.log(response);
 			}
