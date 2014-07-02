@@ -1,27 +1,27 @@
-// function to make jQuery support what would otherwise be .animate({height: "auto"});
+// function to make jQuery support what would otherwise be .animate({height: 'auto'});
 jQuery.fn.animateAuto = function(prop, speed, callback){
     var elem, height, width;
     return this.each(function(i, el){
         el = jQuery(el), elem = el.clone().css( {
-        	"height": "auto",
-        	"width": "auto"
-        }).appendTo("body");
-        height = elem.css("height"),
-        width = elem.css("width"),
+        	'height': 'auto',
+        	'width': 'auto'
+        }).appendTo('body');
+        height = elem.css('height'),
+        width = elem.css('width'),
         elem.remove();
         
-        if (prop === "height") {
+        if (prop === 'height') {
             el.animate( {
-            	"height": height
+            	'height': height
             }, speed, callback);
-        } else if (prop === "width") {
+        } else if (prop === 'width') {
             el.animate( {
-            	"width": width
+            	'width': width
             }, speed, callback);  
-        } else if (prop === "both") {
+        } else if (prop === 'both') {
             el.animate( {
-            	"width": width,
-            	"height": height
+            	'width': width,
+            	'height': height
             }, speed, callback);
         }
     });  
@@ -55,7 +55,7 @@ jQuery('#search_form').submit(function(e) {
 	e.preventDefault();
 	var artist_name = jQuery('input[name=artist_name]').val();
 	if (artist_name !== '') {
-		jQuery('.form-help span').removeClass("error").show().text("Searching for songs by " + artist_name + "...");
+		jQuery('.form-help span').removeClass('error').show().text('Searching for songs by ' + artist_name + '...');
 		jQuery.ajax({
 			url: jQuery(this).attr('action'),
 			type: jQuery(this).attr('method'),
@@ -63,22 +63,23 @@ jQuery('#search_form').submit(function(e) {
 			dataType: 'text',
 			success: function(response) {
 				jQuery('.playlist-container').css('display', 'block');
-				jQuery(".festival-container").animateAuto("height", 500); 
+				jQuery('.festival-container').animateAuto('height', 500); 
 				jQuery('[data-id=save-to-spotify]').css('display', 'block');
 				jQuery('#results').prepend(response);
-				jQuery('.form-help span').removeClass("error").hide();
+				jQuery('.form-help span').removeClass('error').hide();
 				var artist_count = jQuery('[data-type=spotify-artist]').length;
 				if (artist_count == 2) {
 					jQuery('[data-id=save-to-spotify]').clone().prependTo('.playlist-container');
 				}
 			},
 			error: function(response) {
-				jQuery('.form-help span').addClass("error").text("Sorry, something went wrong. Please try again.");
-				console.log(response);
+				console.log('Error');
+				console.log(response.responseText);
+				jQuery('.form-help span').addClass('error').text(response.responseText);
 			}
 		});
 	} else {
-		jQuery('.form-help span').addClass("error").show().text("Please enter an artist name.");
+		jQuery('.form-help span').addClass('error').show().text('Please enter an artist name.');
 		console.log('No artist name given');
 	}
 });
