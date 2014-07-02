@@ -62,6 +62,7 @@ jQuery('#search_form').submit(function(e) {
 			data: jQuery(this).serialize(),
 			dataType: 'text',
 			success: function(response) {
+				jQuery('.playlist-container').css('display', 'block');
 				jQuery(".festival-container").animateAuto("height", 500); 
 				jQuery('[data-id=save-to-spotify]').css('display', 'block');
 				jQuery('#results').prepend(response);
