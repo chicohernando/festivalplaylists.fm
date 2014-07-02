@@ -48,5 +48,7 @@ a:focus {
 }
 
 .error {
-  color: $red;
+  color: #fff;
+  background: $errorColor;
+  padding: 3px 5px;
 }

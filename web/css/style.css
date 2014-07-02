@@ -537,7 +537,9 @@ a:focus {
     background: #41dacd; }
 
 .error {
-  color: #a74848; }
+  color: #fff;
+  background: #a74848;
+  padding: 3px 5px; }
 
 [data-id=save-to-spotify] {
   display: none; }
