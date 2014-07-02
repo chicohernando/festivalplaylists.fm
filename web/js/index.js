@@ -2,21 +2,32 @@
 jQuery.fn.animateAuto = function(prop, speed, callback){
     var elem, height, width;
     return this.each(function(i, el){
-        el = jQuery(el), elem = el.clone().css({"height":"auto","width":"auto"}).appendTo("body");
+        el = jQuery(el), elem = el.clone().css( {
+        	"height": "auto",
+        	"width": "auto"
+        }).appendTo("body");
         height = elem.css("height"),
         width = elem.css("width"),
         elem.remove();
         
-        if(prop === "height")
-            el.animate({"height":height}, speed, callback);
-        else if(prop === "width")
-            el.animate({"width":width}, speed, callback);  
-        else if(prop === "both")
-            el.animate({"width":width,"height":height}, speed, callback);
+        if (prop === "height") {
+            el.animate( {
+            	"height": height
+            }, speed, callback);
+        } else if (prop === "width") {
+            el.animate( {
+            	"width": width
+            }, speed, callback);  
+        } else if (prop === "both") {
+            el.animate( {
+            	"width": width,
+            	"height": height
+            }, speed, callback);
+        }
     });  
-}
+};
 
-jQuery('#save_to_spotify').click(function(e) {
+jQuery('[data-id=save-to-spotify]').click(function(e) {
 	e.preventDefault();
 	/**
 	 * Find all artists, reverse the order so we get them in the order that
@@ -42,23 +53,23 @@ jQuery('#save_to_spotify').click(function(e) {
 
 jQuery('#search_form').submit(function(e) {
 	e.preventDefault();
-
 	var artist_name = jQuery('input[name=artist_name]').val();
 	if (artist_name !== '') {
 		jQuery('.form-help span').removeClass("error").show().text("Searching for songs by " + artist_name + "...");
-		console.log('Searching for songs by ' + artist_name);
 		jQuery.ajax({
 			url: jQuery(this).attr('action'),
 			type: jQuery(this).attr('method'),
 			data: jQuery(this).serialize(),
 			dataType: 'text',
 			success: function(response) {
-				//console.log(response);
-				// jQuery('.festival-container').animate({height: "auto"});
 				jQuery(".festival-container").animateAuto("height", 500); 
-				jQuery('#save_to_spotify').css('display', 'block');
+				jQuery('[data-id=save-to-spotify]').css('display', 'block');
 				jQuery('#results').prepend(response);
 				jQuery('.form-help span').removeClass("error").hide();
+				var artist_count = jQuery('[data-type=spotify-artist]').length;
+				if (artist_count == 2) {
+					jQuery('[data-id=save-to-spotify]').clone().prependTo('.playlist-container');
+				}
 			},
 			error: function(response) {
 				console.log('Error');
