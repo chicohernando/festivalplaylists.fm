@@ -539,6 +539,9 @@ a:focus {
 .error {
   color: #a74848; }
 
+[data-id=save-to-spotify] {
+  display: none; }
+
 .festival-container {
   background: url("../images/festival.png") no-repeat center center;
   background-size: cover;

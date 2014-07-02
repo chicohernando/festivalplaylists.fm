@@ -14,9 +14,9 @@ jQuery.fn.animateAuto = function(prop, speed, callback){
         else if(prop === "both")
             el.animate({"width":width,"height":height}, speed, callback);
     });  
-}
+};
 
-jQuery('#save_to_spotify').click(function(e) {
+jQuery('[data-id=save-to-spotify]').click(function(e) {
 	e.preventDefault();
 	/**
 	 * Find all artists, reverse the order so we get them in the order that
@@ -42,7 +42,6 @@ jQuery('#save_to_spotify').click(function(e) {
 
 jQuery('#search_form').submit(function(e) {
 	e.preventDefault();
-
 	var artist_name = jQuery('input[name=artist_name]').val();
 	if (artist_name !== '') {
 		jQuery('.form-help span').removeClass("error").show().text("Searching for songs by " + artist_name + "...");
@@ -56,9 +55,13 @@ jQuery('#search_form').submit(function(e) {
 				//console.log(response);
 				// jQuery('.festival-container').animate({height: "auto"});
 				jQuery(".festival-container").animateAuto("height", 500); 
-				jQuery('#save_to_spotify').css('display', 'block');
+				jQuery('[data-id=save-to-spotify]').css('display', 'block');
 				jQuery('#results').prepend(response);
 				jQuery('.form-help span').removeClass("error").hide();
+				var artist_count = jQuery('[data-type=spotify-artist]').length;
+				if (artist_count == 2) {
+					jQuery('[data-id=save-to-spotify]').clone().prependTo('.playlist-container');
+				}
 			},
 			error: function(response) {
 				console.log('Error');
