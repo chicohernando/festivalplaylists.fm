@@ -27,58 +27,75 @@
 	 */
 	$app->post('/artist-search', function(Request $request) use ($app) {
 		$artist_name = $request->get('artist_name');
-		$spotify_results = file_get_contents('https://api.spotify.com/v1/search?q=' . urlencode($artist_name) . '&type=artist');
-		$spotify_results = json_decode($spotify_results);
-		$artist = $spotify_results->artists->items[0];
-		$setlists = SetlistFM_Setlist::search(array('artistName' => $artist->name));
-		
-		if (is_array($setlists)) {
-			$songs = array();
-			foreach ($setlists as $setlist) {
-				//setlist is a SetlistFM_Setlist object
-				foreach ($setlist->getSets() as $set) {
-					//set is a SetlistFM_Setlist object
-					foreach ($set->getSongs() as $song) {
-						//song is a SetlistFM_Song object
-						if (isset($songs[$song->getNormalizedName()])) {
-							$songs[$song->getNormalizedName()]->count++;
-						} else {
-							if ($song->getName() == '' || $song->getNormalizedName() == '') {
-								continue;
-							}
 
-							$songs[$song->getNormalizedName()] = new stdClass();
-							$songs[$song->getNormalizedName()]->name = $song->getName();
-							$songs[$song->getNormalizedName()]->count = 1;
-							$songs[$song->getNormalizedName()]->spotifyUri = '';
+		try {
+			$spotify_results = file_get_contents('https://api.spotify.com/v1/search?q=' . urlencode($artist_name) . '&type=artist');
+			$setlists = null;
+			
+			if (!empty($spotify_results)) {
+				$spotify_results = json_decode($spotify_results);
+				if (isset($spotify_results->artists->items[0])) {
+					$artist = $spotify_results->artists->items[0];
+					$setlists = SetlistFM_Setlist::search(array('artistName' => $artist->name));
+				}
+			}
+			
+			if (is_array($setlists)) {
+				$songs = array();
+				foreach ($setlists as $setlist) {
+					//setlist is a SetlistFM_Setlist object
+					foreach ($setlist->getSets() as $set) {
+						//set is a SetlistFM_Setlist object
+						foreach ($set->getSongs() as $song) {
+							//song is a SetlistFM_Song object
+							if (isset($songs[$song->getNormalizedName()])) {
+								$songs[$song->getNormalizedName()]->count++;
+							} else {
+								if ($song->getName() == '' || $song->getNormalizedName() == '') {
+									continue;
+								}
+
+								$songs[$song->getNormalizedName()] = new stdClass();
+								$songs[$song->getNormalizedName()]->name = $song->getName();
+								$songs[$song->getNormalizedName()]->count = 1;
+								$songs[$song->getNormalizedName()]->spotifyUri = '';
+							}
 						}
 					}
 				}
-			}
 
-			uasort($songs, array('SetlistFM_Song', 'sortByCount'));
+				uasort($songs, array('SetlistFM_Song', 'sortByCount'));
 
-			$count = 0;
-			foreach ($songs as $song) {
-				if ($count >= 5) {
-					break; 
+				$count = 0;
+				foreach ($songs as $song) {
+					if ($count >= 5) {
+						break; 
+					}
+
+					$searchResults = Spotify::searchTrack(implode(' ', array($artist->name, $song->name)));
+					if (!empty($searchResults) && isset($searchResults->tracks[0])) {
+						$count++;
+						$s = new stdClass();
+						$s->name = $song->name;
+						$s->uri = $searchResults->tracks[0]->href;
+						$s->duration = ltrim(ltrim(gmdate("i:s", $searchResults->tracks[0]->length), '0'), ':');
+						$artist->songs[] = $s;
+					}
 				}
-
-				$searchResults = Spotify::searchTrack(implode(' ', array($artist->name, $song->name)));
-				if (!empty($searchResults) && isset($searchResults->tracks[0])) {
-					$count++;
-					$s = new stdClass();
-					$s->name = $song->name;
-					$s->uri = $searchResults->tracks[0]->href;
-					$s->duration = ltrim(ltrim(gmdate("i:s", $searchResults->tracks[0]->length), '0'), ':');
-					$artist->songs[] = $s;
-				}
 			}
+		} catch (Exception $e) {
+			$artist = null;
 		}
 
-		return $app['twig']->render('artist-search.html.twig', array(
-			'artist' => $artist
-		));
+		if (!isset($artist) || count($artist->songs) == 0) {
+			return new Response($app['twig']->render('artist-search-error.html.twig', array(
+				'message' => 'No songs could be found that match your search'
+			)), 404);
+		} else {
+			return $app['twig']->render('artist-search.html.twig', array(
+				'artist' => $artist
+			));
+		}
 	})->bind('artist-search');
 
 	$app->run();

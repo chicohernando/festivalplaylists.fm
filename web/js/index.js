@@ -62,8 +62,8 @@ jQuery('#search_form').submit(function(e) {
 			},
 			error: function(response) {
 				console.log('Error');
-				jQuery('.form-help span').addClass("error").text("Sorry, something went wrong. Please try again.");
-				console.log(response);
+				console.log(response.responseText);
+				jQuery('.form-help span').addClass('error').text(response.responseText);
 			}
 		});
 	} else {
