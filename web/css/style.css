@@ -601,6 +601,8 @@ ol.grid-8 {
   padding: 5px; }
   ol.grid-8 li {
     padding: 2px 5px; }
+  ol.grid-8 span {
+    float: right; }
 
 ol > li:nth-child(odd) {
   background-color: #38d8cb; }

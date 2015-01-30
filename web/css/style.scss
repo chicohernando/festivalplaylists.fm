@@ -81,6 +81,9 @@ ol.grid-8 {
   li {
     padding: 2px 5px;
   }
+  span {
+    float: right;
+  }
 }
 
 ol>li:nth-child(odd) {
