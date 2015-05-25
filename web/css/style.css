@@ -541,13 +541,10 @@ a:focus {
   background: #a74848;
   padding: 3px 5px; }
 
-[data-id=save-to-spotify] {
-  display: none; }
-
 .festival-container {
   background: url("../images/festival.png") no-repeat center center;
   background-size: cover;
-  height: 94%; }
+  height: 55%; }
   .festival-container .container {
     padding: 100px 0;
     width: 70%; }
@@ -570,7 +567,6 @@ a:focus {
 .playlist-container {
   background: #56ded3;
   color: #FFF;
-  display: none;
   margin: 0px auto;
   padding: 40px 0 20px; }
   .playlist-container .btn {
@@ -584,7 +580,7 @@ a:focus {
 
 .playlist {
   font-size: 18px;
-  width: 70%; }
+  width: 90%; }
   .playlist .row {
     margin: 20px auto; }
   .playlist .grid-4 {

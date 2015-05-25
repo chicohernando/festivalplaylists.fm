@@ -6,14 +6,10 @@
 @import "grid";
 @import "scaffolding";
 
-[data-id=save-to-spotify] {
-  display: none;
-}
-
 .festival-container {
   background: url('../images/festival.png') no-repeat center center;
   background-size: cover;
-  height: 94%;
+  height: 55%;
   .container {
     padding: 100px 0;
     width: 70%;
@@ -42,7 +38,6 @@
 .playlist-container {
   background: $teal;
   color: #FFF;
-  display: none;
   margin: 0px auto;
   padding: 40px 0 20px;
   .btn {
@@ -60,7 +55,7 @@
 
 .playlist {
   font-size: $baseFontSize + 4;
-  width: 70%;
+  width: 90%;
   .row {
     margin: 20px auto;
   }
