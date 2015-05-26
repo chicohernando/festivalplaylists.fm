@@ -48,7 +48,6 @@
       <a href="http://www.github.com/niederer">niederer</a>.</span>
     </footer>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="/js/jq-sticky-anything.min.js"></script>
     <script src="/js/index.js"></script>
     <script type="text/javascript">
       (function() {
@@ -95,7 +94,8 @@
                   },
                   method: 'PUT',
                   success: function() {
-                      followButton.textContent = 'Following';
+                      $('button').text('Following');
+                      // followButton.textContent = 'Following';
                   },
                   dataType: 'html',
                   error: function(e) {
@@ -107,7 +107,7 @@
           var followButton = document.getElementById('btn-follow'),
               playlistUriInput = document.getElementById('playlist-uri');
 
-          followButton.addEventListener('click', function() {
+          $('button').addEventListener('click', function() {
               login(function(accessToken) {
                   followPlaylist(accessToken, playlistUriInput.value);
               });
