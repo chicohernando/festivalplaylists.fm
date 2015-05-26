@@ -6,6 +6,10 @@
 @import "grid";
 @import "scaffolding";
 
+img {
+  max-width: 100%;
+}
+
 .festival-container {
   background: url('/images/festival.png') no-repeat center center;
   background-size: cover;
