@@ -18,7 +18,7 @@
 	 * Homepage
 	 */
 	$app->get('/', function() use($app) { 
-		return $app->redirect($app["url_generator"]->generate("riotfest2014"));
+		return $app->redirect($app["url_generator"]->generate("chicagoriotfest2014"));
 	    return $app['twig']->render('index.html.twig', array(
 	        
 	    ));
@@ -36,7 +36,7 @@
 	/**
 	 * Testing out putting a playable iframe playlist
 	 */
-	$app->get('/playlist/riot-fest-2014', function() use ($app) {
+	$app->get('/playlist/chicago-riot-fest-2014', function() use ($app) {
 		$playlist_uri = "spotify:user:easander:playlist:3fl2SYC95YZL9Lsmm3bXl4";
 		$playlist_json = file_get_contents("http://tomashenden.com/projects/spotify-php-playlist.php?uri=" . $playlist_uri . "&output=json");
 		$playlist_json = json_decode($playlist_json);
@@ -52,7 +52,7 @@
 			'tracks' => $tracks,
 			'song_count' => count($playlist_json->tracks)
 	    ));
-	})->bind('riotfest2014');
+	})->bind('chicagoriotfest2014');
 
 	
 	/**
