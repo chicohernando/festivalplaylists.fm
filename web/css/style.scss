@@ -44,16 +44,6 @@
   color: #FFF;
   margin: 0px auto;
   padding: 40px 0 20px;
-  .btn {
-    background: $navy;
-    color: #FFF;
-    &:hover {
-      background: lighten($navy, 2);
-      color: $lime;
-    }
-    &:active {
-      background: darken($navy, 5);
-    }
   }
 }
 

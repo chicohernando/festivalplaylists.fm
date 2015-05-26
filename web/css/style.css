@@ -526,15 +526,16 @@ a:focus {
   text-decoration: underline; }
 
 .btn {
-  background: #F5F5F5;
-  border: 0;
+  background: #ca2295;
+  border: 1px solid #ca2295;
+  border-radius: 3px;
+  color: #FFF;
   font-size: 20px;
   padding: 7px 20px; }
-  .btn:hover {
-    background: #56ded3;
-    color: #FFF; }
-  .btn:active {
-    background: #41dacd; }
+  .btn:hover, .btn:active, .btn:focus {
+    background: #FFF;
+    color: #ca2295;
+    outline: 0; }
 
 .error {
   color: #fff;
@@ -572,14 +573,6 @@ a:focus {
   color: #FFF;
   margin: 0px auto;
   padding: 40px 0 20px; }
-  .playlist-container .btn {
-    background: #023749;
-    color: #FFF; }
-    .playlist-container .btn:hover {
-      background: #023e53;
-      color: #dcde56; }
-    .playlist-container .btn:active {
-      background: #012430; }
 
 .playlist {
   font-size: 18px;
