@@ -9,7 +9,7 @@
 .festival-container {
   background: url('/images/festival.png') no-repeat center center;
   background-size: cover;
-  height: 55%;
+  min-height: 55%;
   .container {
     padding: 100px 0;
     width: 70%;
@@ -39,36 +39,44 @@
   background: $teal;
 }
 
+.pseudo-menu {
+  background: lighten($teal, 25%);
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+  padding: 10px;
+  width: 100%;
+  .btn {
+    float: right;
+    margin-top: 10px;
+    margin-right: 40px;
+  }
+}
+
+.static-button {
+  margin-bottom: 40px;
+}
+
 .playlist-container {
   background: $teal;
   color: #FFF;
   margin: 0px auto;
   padding: 40px 0 20px;
-  .btn {
-    background: $navy;
-    color: #FFF;
-    &:hover {
-      background: lighten($navy, 2);
-      color: $lime;
-    }
-    &:active {
-      background: darken($navy, 5);
-    }
+  .container {
+    width: 90%;
   }
 }
 
 .playlist {
   font-size: $baseFontSize + 4;
-  width: 90%;
   .row {
     margin: 20px auto;
   }
-  .grid-4 {
-    font-weight: 500;
-    padding-top: 10px;
-    padding-right: 25px;
-    text-align: right;
-  }
+}
+
+.artist-name {
+  font-weight: 500;
+  padding-top: 10px;
+  padding-right: 25px;
+  text-align: right;
 }
 
 ol.grid-8 {
@@ -102,5 +110,24 @@ ol>li:nth-child(odd) {
     &:active {
       color: #000;
     }
+  }
+}
+
+@media screen and (max-width: $grid-float-breakpoint) {
+  .pseudo-menu img {
+    display: none;
+  }
+  .pseudo-menu .btn {
+    float: none;
+    margin-right: 0px;
+    margin-top: 0;
+    padding: 7px 15px;
+  }
+  .artist-name {
+    margin-top: 10px;
+    text-align: left;
+  }
+  .playlist .row {
+    margin: 0 -10px;
   }
 }
