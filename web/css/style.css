@@ -542,7 +542,7 @@ a:focus {
   padding: 3px 5px; }
 
 .festival-container {
-  background: url("../images/festival.png") no-repeat center center;
+  background: url("/images/festival.png") no-repeat center center;
   background-size: cover;
   height: 55%; }
   .festival-container .container {
