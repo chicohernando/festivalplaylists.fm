@@ -545,7 +545,7 @@ a:focus {
 .festival-container {
   background: url("../images/festival.png") no-repeat center center;
   background-size: cover;
-  height: 55%; }
+  min-height: 55%; }
   .festival-container .container {
     padding: 100px 0;
     width: 70%; }
@@ -568,22 +568,37 @@ a:focus {
 .button-container {
   background: #56ded3; }
 
+.pseudo-menu {
+  background: #c1f3ef;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 100%; }
+  .pseudo-menu .btn {
+    float: right;
+    margin-top: 10px;
+    margin-right: 40px; }
+
+.static-button {
+  margin-bottom: 40px; }
+
 .playlist-container {
   background: #56ded3;
   color: #FFF;
   margin: 0px auto;
   padding: 40px 0 20px; }
+  .playlist-container .container {
+    width: 90%; }
 
 .playlist {
-  font-size: 18px;
-  width: 90%; }
+  font-size: 18px; }
   .playlist .row {
     margin: 20px auto; }
-  .playlist .grid-4 {
-    font-weight: 500;
-    padding-top: 10px;
-    padding-right: 25px;
-    text-align: right; }
+
+.artist-name {
+  font-weight: 500;
+  padding-top: 10px;
+  padding-right: 25px;
+  text-align: right; }
 
 ol.grid-8 {
   border: 1px solid #38d8cb;
@@ -610,3 +625,20 @@ ol > li:nth-child(odd) {
       color: #000; }
     .footer a:active {
       color: #000; }
+
+@media screen and (max-width: 768px) {
+  .pseudo-menu img {
+    display: none; }
+
+  .pseudo-menu .btn {
+    float: none;
+    margin-right: 0px;
+    margin-top: 0;
+    padding: 7px 15px; }
+
+  .artist-name {
+    margin-top: 10px;
+    text-align: left; }
+
+  .playlist .row {
+    margin: 0 -10px; } }

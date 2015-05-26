@@ -9,7 +9,7 @@ jQuery.fn.animateAuto = function(prop, speed, callback){
         height = elem.css('height'),
         width = elem.css('width'),
         elem.remove();
-        
+
         if (prop === 'height') {
             el.animate( {
             	'height': height
@@ -17,17 +17,34 @@ jQuery.fn.animateAuto = function(prop, speed, callback){
         } else if (prop === 'width') {
             el.animate( {
             	'width': width
-            }, speed, callback);  
+            }, speed, callback);
         } else if (prop === 'both') {
             el.animate( {
             	'width': width,
             	'height': height
             }, speed, callback);
         }
-    });  
+    });
 };
 
-jQuery('.button-container').stickThis();
+jQuery('.pseudo-menu').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').hide();
+
+scrollIntervalID = setInterval(stickIt, 10);
+
+function stickIt() {
+
+  var orgElementPos = jQuery('.static-button').offset();
+  orgElementTop = orgElementPos.top;
+
+  if (jQuery(window).scrollTop() >= (orgElementTop)) {
+    // scrolled past the original position; now only show the cloned, sticky element.
+    jQuery('.pseudo-menu').css('top',0).slideDown(200);
+  } else {
+    // not scrolled past the menu; only show the original menu.
+    jQuery('.pseudo-menu').slideUp('fast');
+  }
+}
+
 jQuery('[data-id=save-to-spotify]').click(function(e) {
 	e.preventDefault();
 	/**
@@ -40,7 +57,7 @@ jQuery('[data-id=save-to-spotify]').click(function(e) {
    			return jQuery(this).data('uri');
 		}).get();
 	}).get();
-	
+
 	var client_id = 'bde96cbd16ec44548ab77ce86e187654';
 	var redirect_uri = 'http://localhost:8000/callback.html';
 	var url = 'https://accounts.spotify.com/authorize?client_id=' + client_id +
@@ -64,7 +81,7 @@ jQuery('#search_form').submit(function(e) {
 			dataType: 'text',
 			success: function(response) {
 				jQuery('.playlist-container').css('display', 'block');
-				jQuery('.festival-container').animateAuto('height', 500); 
+				jQuery('.festival-container').animateAuto('height', 500);
 				jQuery('[data-id=save-to-spotify]').css('display', 'block');
 				jQuery('#results').prepend(response);
 				jQuery('.form-help span').removeClass('error').hide();
