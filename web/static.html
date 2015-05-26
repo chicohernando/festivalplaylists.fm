@@ -21,7 +21,8 @@
     </div>
     <div class="playlist-container">
       <div class="container playlist" id="results">
-        <button class="btn centered" data-id="save-to-spotify">Add this playlist to Spotify</button>
+        <button class="btn centered" id="btn-follow">Add this playlist to Spotify</button>
+        <input type="hidden" id="playlist-uri" value="spotify:user:niedererer:playlist:5fXjpHjPp7ycppST9xTDUF" />
         <div class="row">
           <div class="grid-6">
             <div class="row" data-id="18Zv2g2vUcEGqJf6WnjfXN" data-type="spotify-artist" data-uri="spotify:artist:18Zv2g2vUcEGqJf6WnjfXN">
@@ -451,6 +452,73 @@
       <span>Created by <a href=
       "http://www.github.com/chicohernando">chicohernando</a>. Designed by
       <a href="http://www.github.com/niederer">niederer</a>.</span>
-    </footer><script src="//code.jquery.com/jquery-1.11.0.min.js"></script> <script src="/js/index.js"></script>
+    </footer>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/js/index.js"></script>
+    <script type="text/javascript">
+      (function() {
+    
+          function login(callback) {
+              var CLIENT_ID = 'bde96cbd16ec44548ab77ce86e187654';
+              var REDIRECT_URI = 'http://localhost:8000/follow-callback.html';
+              function getLoginURL(scopes) {
+                  return 'https://accounts.spotify.com/authorize?client_id=' + CLIENT_ID +
+                    '&redirect_uri=' + encodeURIComponent(REDIRECT_URI) +
+                    '&scope=' + encodeURIComponent(scopes.join(' ')) +
+                    '&response_type=token';
+              }
+              
+              var url = getLoginURL([
+                  'playlist-modify-public'
+              ]);
+              
+              var width = 450,
+                  height = 730,
+                  left = (screen.width / 2) - (width / 2),
+                  top = (screen.height / 2) - (height / 2);
+          
+              window.addEventListener("message", function(event) {
+                  var hash = JSON.parse(event.data);
+                  if (hash.type == 'access_token') {
+                      callback(hash.access_token);
+                  }
+              }, false);
+              
+              var w = window.open(url,
+                                  'Spotify',
+                                  'menubar=no,location=no,resizable=no,scrollbars=no,status=no, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left
+                                 );
+              
+          }
+
+          function followPlaylist(accessToken, playlistUri) {
+              var parts = playlistUri.split(':');
+              $.ajax({
+                  url: 'https://api.spotify.com/v1/users/' + parts[2] + '/playlists/' + parts[4] + '/followers',
+                  headers: {
+                     'Authorization': 'Bearer ' + accessToken
+                  },
+                  method: 'PUT',
+                  success: function() {
+                      followButton.textContent = 'Following';
+                  },
+                  dataType: 'html',
+                  error: function(e) {
+                      console.error(e);
+                  }
+              });
+          }
+
+          var followButton = document.getElementById('btn-follow'),
+              playlistUriInput = document.getElementById('playlist-uri');
+          
+          followButton.addEventListener('click', function() {
+              login(function(accessToken) {
+                  followPlaylist(accessToken, playlistUriInput.value);
+              });
+          });
+          
+      })();
+    </script>
   </body>
 </html>
