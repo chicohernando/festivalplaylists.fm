@@ -107,7 +107,7 @@
           var followButton = document.getElementById('btn-follow'),
               playlistUriInput = document.getElementById('playlist-uri');
 
-          $('button').addEventListener('click', function() {
+          $('body').on('click', 'button', function() {
               login(function(accessToken) {
                   followPlaylist(accessToken, playlistUriInput.value);
               });
