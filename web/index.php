@@ -2,6 +2,7 @@
 	require_once __DIR__ . '/../vendor/autoload.php';
 	require_once __DIR__ . '/../SetlistFM/setlistfm.api.php';
 	require_once __DIR__ . '/../Spotify/' . 'spotify.class.php';
+	require_once __DIR__ . '/../chicohernando/FestivalPlaylistHelper.class.php';
 	use Symfony\Component\HttpFoundation\Request;
 	use Symfony\Component\HttpFoundation\Response;
 
@@ -17,28 +18,56 @@
 	 * Homepage
 	 */
 	$app->get('/', function() use($app) { 
+		return $app->redirect($app["url_generator"]->generate("riotfest2014"));
 	    return $app['twig']->render('index.html.twig', array(
 	        
 	    ));
 	})->bind('home');
 
 	/**
+	 * Testing out putting a playable iframe playlist
+	 */
+	$app->get('/iframe', function() use ($app) {
+		return $app['twig']->render('iframe.html.twig', array(
+	        
+	    ));
+	})->bind('iframe');
+
+	/**
+	 * Testing out putting a playable iframe playlist
+	 */
+	$app->get('/playlist/riot-fest-2014', function() use ($app) {
+		$playlist_uri = "spotify:user:easander:playlist:3fl2SYC95YZL9Lsmm3bXl4";
+		$playlist_json = file_get_contents("http://tomashenden.com/projects/spotify-php-playlist.php?uri=" . $playlist_uri . "&output=json");
+		$playlist_json = json_decode($playlist_json);
+		$tracks = array();
+
+		foreach($playlist_json->tracks as $track) {
+			$tracks[$track->artist][] = $track;
+		}
+
+		return $app['twig']->render('playlist.html.twig', array(
+			'playlist_uri' => $playlist_uri,
+			'playlist_title' => $playlist_json->name,
+			'tracks' => $tracks,
+			'song_count' => count($playlist_json->tracks)
+	    ));
+	})->bind('riotfest2014');
+
+	
+	/**
 	 * Handle the search for an artist via Spotify
 	 */
 	$app->post('/artist-search', function(Request $request) use ($app) {
 		$artist_name = $request->get('artist_name');
+		$setlists = null;
 
 		try {
-			$spotify_results = file_get_contents('https://api.spotify.com/v1/search?q=' . urlencode($artist_name) . '&type=artist');
-			$setlists = null;
-			
-			if (!empty($spotify_results)) {
-				$spotify_results = json_decode($spotify_results);
-				if (isset($spotify_results->artists->items[0])) {
-					$artist = $spotify_results->artists->items[0];
-					$setlists = SetlistFM_Setlist::search(array('artistName' => $artist->name));
-				}
-			}
+			$spotify_results = FestivalPlaylistHelper::searchSpotifyForArtist($artist_name);
+			$artist = $spotify_results->artists->items[0];
+
+			$setlists = SetlistFM_Setlist::search(array('artistName' => $artist->name));
+			print_r($setlists);exit;
 			
 			if (is_array($setlists)) {
 				$songs = array();
@@ -83,6 +112,10 @@
 					}
 				}
 			}
+		} catch (ResultsNotFoundException $rnfe) {
+			$artist = null;
+		} catch (ArtistNotFoundException $anfe) {
+			$artist = null;
 		} catch (Exception $e) {
 			$artist = null;
 		}
