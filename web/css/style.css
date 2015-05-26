@@ -564,6 +564,9 @@ a:focus {
     font-weight: 500;
     padding-top: 10px; }
 
+.button-container {
+  background: #56ded3; }
+
 .playlist-container {
   background: #56ded3;
   color: #FFF;

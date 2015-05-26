@@ -20,9 +20,11 @@
       </div>
     </div>
     <div class="playlist-container">
-      <div class="container playlist" id="results">
-        <button class="btn centered" id="btn-follow">Add this playlist to Spotify</button>
+      <div class="button-container">
+        <button class="btn centered" data-id="save-to-spotify">Add Chicago Riot Fest 2015 to Spotify</button>
         <input type="hidden" id="playlist-uri" value="spotify:user:niedererer:playlist:5fXjpHjPp7ycppST9xTDUF" />
+      </div>
+      <div class="container playlist" id="results">
         <div class="row">
           <div class="grid-6">
             <div class="row" data-id="18Zv2g2vUcEGqJf6WnjfXN" data-type="spotify-artist" data-uri="spotify:artist:18Zv2g2vUcEGqJf6WnjfXN">
@@ -454,6 +456,7 @@
       <a href="http://www.github.com/niederer">niederer</a>.</span>
     </footer>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/js/jq-sticky-anything.min.js"></script>
     <script src="/js/index.js"></script>
     <script type="text/javascript">
       (function() {

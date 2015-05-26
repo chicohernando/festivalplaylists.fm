@@ -27,6 +27,7 @@ jQuery.fn.animateAuto = function(prop, speed, callback){
     });  
 };
 
+jQuery('.button-container').stickThis();
 jQuery('[data-id=save-to-spotify]').click(function(e) {
 	e.preventDefault();
 	/**
