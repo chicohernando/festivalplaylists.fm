@@ -78,8 +78,7 @@
 	 * Riot Fest 2015 Playlist
 	 */
 	$app->get('/playlist/chicago-riot-fest-2015', function() use ($app) {
-		//TODO: fill in correct uri here
-		$playlist_uri = "spotify:user:easander:playlist:3fl2SYC95YZL9Lsmm3bXl4";
+		$playlist_uri = "spotify:user:easander:playlist:3jxmUYBHHYuZEyAaXKF76K";
 		
 		$md5_uri = md5($playlist_uri);
 		if (file_exists($md5_uri)) {
