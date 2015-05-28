@@ -50,7 +50,15 @@
 	 */
 	$app->get('/playlist/chicago-riot-fest-2014', function() use ($app) {
 		$playlist_uri = "spotify:user:easander:playlist:3fl2SYC95YZL9Lsmm3bXl4";
-		$playlist_json = file_get_contents("http://tomashenden.com/projects/spotify-php-playlist.php?uri=" . $playlist_uri . "&output=json");
+		
+		$md5_uri = md5($playlist_uri);
+		if (file_exists($md5_uri)) {
+			$playlist_json = file_get_contents($md5_uri);
+		} else {
+			$playlist_json = file_get_contents("http://tomashenden.com/projects/spotify-php-playlist.php?uri=" . $playlist_uri . "&output=json");
+			file_put_contents($md5_uri, $playlist_json);
+		}
+		
 		$playlist_json = json_decode($playlist_json);
 		$tracks = array();
 
@@ -72,7 +80,15 @@
 	$app->get('/playlist/chicago-riot-fest-2015', function() use ($app) {
 		//TODO: fill in correct uri here
 		$playlist_uri = "spotify:user:easander:playlist:3fl2SYC95YZL9Lsmm3bXl4";
-		$playlist_json = file_get_contents("http://tomashenden.com/projects/spotify-php-playlist.php?uri=" . $playlist_uri . "&output=json");
+		
+		$md5_uri = md5($playlist_uri);
+		if (file_exists($md5_uri)) {
+			$playlist_json = file_get_contents($md5_uri);
+		} else {
+			$playlist_json = file_get_contents("http://tomashenden.com/projects/spotify-php-playlist.php?uri=" . $playlist_uri . "&output=json");
+			file_put_contents($md5_uri, $playlist_json);
+		}
+
 		$playlist_json = json_decode($playlist_json);
 		$tracks = array();
 
