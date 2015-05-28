@@ -30,7 +30,7 @@
 	 * Homepage
 	 */
 	$app->get('/', function() use($app) { 
-		return $app->redirect($app["url_generator"]->generate("chicagoriotfest2014"));
+		return $app->redirect($app["url_generator"]->generate("chicagoriotfest2015"));
 	    return $app['twig']->render('index.html.twig', array(
 	        
 	    ));
@@ -46,7 +46,7 @@
 	})->bind('iframe');
 
 	/**
-	 * Testing out putting a playable iframe playlist
+	 * Riot Fest 2014 Playlist
 	 */
 	$app->get('/playlist/chicago-riot-fest-2014', function() use ($app) {
 		$playlist_uri = "spotify:user:easander:playlist:3fl2SYC95YZL9Lsmm3bXl4";
@@ -65,6 +65,28 @@
 			'song_count' => count($playlist_json->tracks)
 	    ));
 	})->bind('chicagoriotfest2014');
+
+	/**
+	 * Riot Fest 2015 Playlist
+	 */
+	$app->get('/playlist/chicago-riot-fest-2015', function() use ($app) {
+		//TODO: fill in correct uri here
+		$playlist_uri = "spotify:user:easander:playlist:3fl2SYC95YZL9Lsmm3bXl4";
+		$playlist_json = file_get_contents("http://tomashenden.com/projects/spotify-php-playlist.php?uri=" . $playlist_uri . "&output=json");
+		$playlist_json = json_decode($playlist_json);
+		$tracks = array();
+
+		foreach($playlist_json->tracks as $track) {
+			$tracks[$track->artist][] = $track;
+		}
+
+		return $app['twig']->render('playlist.html.twig', array(
+			'playlist_uri' => $playlist_uri,
+			'playlist_title' => $playlist_json->name,
+			'tracks' => $tracks,
+			'song_count' => count($playlist_json->tracks)
+	    ));
+	})->bind('chicagoriotfest2015');
 
 	
 	/**
