@@ -630,18 +630,24 @@ ol > li:nth-child(odd) {
       color: #000; }
 
 @media screen and (max-width: 768px) {
+  .pseudo-menu {
+    padding: 10px 0; }
+
   .pseudo-menu img {
     display: none; }
 
   .pseudo-menu .btn {
+    display: block;
     float: none;
-    margin-right: 0px;
-    margin-top: 0;
-    padding: 7px 15px; }
+    margin: 0 auto;
+    padding: 7px; }
 
   .artist-name {
     margin-top: 10px;
     text-align: left; }
 
   .playlist .row {
-    margin: 0 -10px; } }
+    margin: 0 -10px; }
+
+  .btn {
+    font-size: 17px; } }
