@@ -5,6 +5,7 @@
 	require_once __DIR__ . '/../chicohernando/FestivalPlaylistHelper.class.php';
 	use Symfony\Component\HttpFoundation\Request;
 	use Symfony\Component\HttpFoundation\Response;
+	use Symfony\Component\Yaml\Parser;
 
 	$app = new Silex\Application();
 	$app['debug'] = true;
@@ -13,6 +14,11 @@
 	$app->register(new Silex\Provider\TwigServiceProvider(), array(
 	    'twig.path' => __DIR__ . '/../views',
 	));
+	$app['twig']->addExtension(new Twig_Extension_StringLoader());
+
+	$yaml = new Parser();
+	$playlist_config = $yaml->parse(file_get_contents(__DIR__ . '/../config/playlists.yml'));
+	$app['playlists'] = $playlist_config['playlists'];
 
 	$app->error(function (\Exception $e, $code) {
 	    switch ($code) {
@@ -30,9 +36,9 @@
 	 * Homepage
 	 */
 	$app->get('/', function() use($app) { 
-		return $app->redirect($app["url_generator"]->generate("chicagoriotfest2015"));
+		return $app->redirect($app["url_generator"]->generate("playlist", array('slug' => 'chicago-riot-fest-2015')));
 	    return $app['twig']->render('index.html.twig', array(
-	        
+	        'playlists' => $app['playlists']
 	    ));
 	})->bind('home');
 
@@ -45,42 +51,14 @@
 	    ));
 	})->bind('iframe');
 
-	/**
-	 * Riot Fest 2014 Playlist
-	 */
-	$app->get('/playlist/chicago-riot-fest-2014', function() use ($app) {
-		$playlist_uri = "spotify:user:easander:playlist:3fl2SYC95YZL9Lsmm3bXl4";
-		
-		$md5_uri = md5($playlist_uri);
-		if (file_exists($md5_uri)) {
-			$playlist_json = file_get_contents($md5_uri);
-		} else {
-			$playlist_json = file_get_contents("http://tomashenden.com/projects/spotify-php-playlist.php?uri=" . $playlist_uri . "&output=json");
-			file_put_contents($md5_uri, $playlist_json);
+	$app->get('/playlist/{slug}', function($slug) use ($app) {
+		if (!isset($app['playlists'][$slug])) {
+			return $app->abort(404, 'No playlist found.');
 		}
 		
-		$playlist_json = json_decode($playlist_json);
-		$tracks = array();
+		$playlist = $app['playlists'][$slug];
+		$md5_uri = md5($playlist['spotify_uri']);
 
-		foreach($playlist_json->tracks as $track) {
-			$tracks[$track->artist][] = $track;
-		}
-
-		return $app['twig']->render('playlist.html.twig', array(
-			'playlist_uri' => $playlist_uri,
-			'playlist_title' => $playlist_json->name,
-			'tracks' => $tracks,
-			'song_count' => count($playlist_json->tracks)
-	    ));
-	})->bind('chicagoriotfest2014');
-
-	/**
-	 * Riot Fest 2015 Playlist
-	 */
-	$app->get('/playlist/chicago-riot-fest-2015', function() use ($app) {
-		$playlist_uri = "spotify:user:easander:playlist:3jxmUYBHHYuZEyAaXKF76K";
-		
-		$md5_uri = md5($playlist_uri);
 		if (file_exists($md5_uri)) {
 			$playlist_json = file_get_contents($md5_uri);
 		} else {
@@ -96,13 +74,13 @@
 		}
 
 		return $app['twig']->render('playlist.html.twig', array(
-			'playlist_uri' => $playlist_uri,
-			'playlist_title' => $playlist_json->name,
+			'playlist_uri' => $playlist['spotify_uri'],
+			'playlist_title' => $playlist['name'],
 			'tracks' => $tracks,
-			'song_count' => count($playlist_json->tracks)
+			'song_count' => count($playlist_json->tracks),
+			'content' => $playlist['content']
 	    ));
-	})->bind('chicagoriotfest2015');
-
+	})->bind('playlist');
 	
 	/**
 	 * Handle the search for an artist via Spotify
