@@ -20,12 +20,3 @@ playlists:
            </p>'
    image: images/chicago-riot-fest-2014.jpg
    spotify_uri: spotify:user:easander:playlist:3fl2SYC95YZL9Lsmm3bXl4
- chicago-riot-fest-2016:
-   slug: chicago-riot-fest-2016
-   name: Chicago Riot Fest 2016
-   content: >
-          '<p>
-             Easily add the {{ playlist_title }} playlist to your Spotify account using the on screen button. You will be prompted to login to your Spotify account before being allowed to add the playlist. Once added, you will be notified if the playlist ever changes and your playlist will be updated automatically.
-           </p>'
-   image: images/chicago-riot-fest-2016.jpg
-   spotify_uri: spotify:user:easander:playlist:3fl2SYC95YZL9Lsmm3bXl4
