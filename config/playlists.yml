@@ -1,0 +1,22 @@
+playlists:
+ chicago-riot-fest-2015:
+   slug: chicago-riot-fest-2015
+   name: Chicago Riot Fest 2015
+   content: >
+          '<p>
+             <a href="http://riotfest.org/chicago/" target="_blank">{{ playlist_title }}</a> to be held in Douglas Park, Chicago IL the weekend of September 11-13 2015.
+           </p>
+           <p>
+             Easily add the {{ playlist_title }} playlist to your Spotify account using the on screen button. You will be prompted to login to your Spotify account before being allowed to add the playlist. Once added, you will be notified if the playlist ever changes and your playlist will be updated automatically.
+           </p>'
+   image: images/chicago-riot-fest-2015.jpg
+   spotify_uri: spotify:user:easander:playlist:3jxmUYBHHYuZEyAaXKF76K
+ chicago-riot-fest-2014:
+   slug: chicago-riot-fest-2014
+   name: Chicago Riot Fest 2014
+   content: >
+          '<p>
+             Easily add the {{ playlist_title }} playlist to your Spotify account using the on screen button. You will be prompted to login to your Spotify account before being allowed to add the playlist. Once added, you will be notified if the playlist ever changes and your playlist will be updated automatically.
+           </p>'
+   image: images/chicago-riot-fest-2014.jpg
+   spotify_uri: spotify:user:easander:playlist:3fl2SYC95YZL9Lsmm3bXl4
