@@ -1,0 +1,77 @@
+.home {
+  .intro {
+    background: url('/images/home.png') no-repeat center center;
+    .container {
+      padding: 150px 0;
+    }
+    p {
+      color: #FFF;
+      margin: 40px 0;
+    }
+  }
+  h2 {
+    font-family: 'Sacramento', cursive;
+    font-size: 3.5em;
+  }
+}
+
+.playlist-container {
+  .row {
+    margin: 20px 0;
+  }
+  .row:nth-child(even) {
+    .playlist-preview:nth-child(odd) {
+      .title {
+        background: $violet;
+        color: #FFF;
+      }
+    }
+    .playlist-preview:nth-child(even) {
+      .title {
+        background: $lime;
+        color: $navy;
+      }
+    }
+  }
+  .row:nth-child(odd) {
+    .playlist-preview:nth-child(even) {
+      .title {
+        background: $violet;
+        color: #FFF;
+      }
+    }
+    .playlist-preview:nth-child(odd) {
+      .title {
+        background: $lime;
+        color: $navy;
+      }
+    }
+  }
+}
+
+.playlist-preview {
+  .overlay-container {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.15);
+  }
+  img {
+    @include transform-origin(top center);
+    @include transform(scale(1.55));
+  }
+  .title {
+    bottom: 5px;
+    font-size: $baseFontSize + 4;
+    left: 0;
+    padding: 5px 20px;
+    position: absolute;
+  }
+}
