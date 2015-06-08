@@ -1,15 +1,16 @@
 // Additional Colors
 // -------------------------
-$teal: 	#56DED3;
-$navy: 	#023749;
-$lime: 	#dcde56;
-$red: 	#a74848;
-$violet: #CA2295;
+$teal: 	   #56DED3;
+$navy: 	   #023749;
+$lime: 	   #dcde56;
+$red: 	   #a74848;
+$violet:   #CA2295;
+$grey:     #333;
 
 // Scaffolding
 // -------------------------
 $bodyBackground:        $teal !default;
-$textColor:             #333 !default;
+$textColor:             $grey !default;
 $errorColor:			      $red;
 
 // Typography

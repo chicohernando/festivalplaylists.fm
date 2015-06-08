@@ -336,7 +336,8 @@ table {
   margin-left: auto;
   margin-right: auto;
   padding-right: 20px;
-  padding-left: 20px; }
+  padding-left: 20px;
+  max-width: 1500px; }
   .container:before, .container:after {
     content: "";
     display: table; }
@@ -527,6 +528,7 @@ a {
 a:hover,
 a:focus {
   color: #0b5577;
+  cursor: pointer;
   text-decoration: underline; }
 
 .btn {
@@ -540,6 +542,11 @@ a:focus {
     background: #FFF;
     color: #CA2295;
     outline: 0; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
 
 .error {
   color: #fff;
@@ -677,8 +684,7 @@ ol > li:nth-child(odd) {
 
 .footer {
   font-size: 12px;
-  padding: 10px 0;
-  text-align: center; }
+  padding: 10px 0; }
   .footer a {
     color: #333;
     font-weight: 500; }
@@ -709,5 +715,19 @@ ol > li:nth-child(odd) {
 
   .btn {
     font-size: 17px; } }
+.playlist-page .footer {
+  background: #023749;
+  color: #FFF;
+  padding: 30px 0; }
+  .playlist-page .footer .container {
+    width: 60%; }
+  .playlist-page .footer h5 {
+    margin: 10px 0 0; }
+  .playlist-page .footer a {
+    color: #dcde56; }
+  .playlist-page .footer ul {
+    margin: 10px 0; }
+  .playlist-page .footer span {
+    margin-top: 20px; }
 
 /*# sourceMappingURL=style.css.map */
