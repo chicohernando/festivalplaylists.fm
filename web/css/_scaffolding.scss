@@ -18,6 +18,11 @@ body {
   font-family: $baseFontFamily;
 }
 
+// Images won't expand outside grid space
+img {
+  max-width: 100%;
+}
+
 // Links
 // -------------------------
 

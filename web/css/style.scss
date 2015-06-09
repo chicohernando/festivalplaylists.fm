@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
+@import url('http://fonts.googleapis.com/css?family=Sacramento');
 
 @import "normalize";
 @import "variables";
 @import "mixins";
+@import "bourbon/bourbon";
 @import "grid";
 @import "scaffolding";
 
-img {
-  max-width: 100%;
-}
+// individual pages
+@import "pages/home";
 
-.festival-container {
-  background: url('/images/festival.png') no-repeat center center;
+.intro {
   background-size: cover;
   min-height: 55%;
   .container {
@@ -22,6 +22,10 @@ img {
     font-size: $baseFontSize + 4;
     line-height: 26px;
   }
+}
+
+.festival-container {
+  background: url('/images/festival.png') no-repeat center center;
   form {
     margin: 50px 0 0;
     text-align: center;

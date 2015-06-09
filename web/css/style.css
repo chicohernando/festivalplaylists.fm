@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,500");
+@import url("http://fonts.googleapis.com/css?family=Sacramento");
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -512,9 +513,12 @@ html {
     line-height: 20px; }
 
 body {
-  background-color: #56ded3;
+  background-color: #56DED3;
   color: #595959;
   font-family: "Raleway", Helvetica, Arial, sans-serif; }
+
+img {
+  max-width: 100%; }
 
 a {
   color: #1188bd;
@@ -526,15 +530,15 @@ a:focus {
   text-decoration: underline; }
 
 .btn {
-  background: #ca2295;
-  border: 1px solid #ca2295;
+  background: #CA2295;
+  border: 1px solid #CA2295;
   border-radius: 3px;
   color: #FFF;
   font-size: 20px;
   padding: 7px 20px; }
   .btn:hover, .btn:active, .btn:focus {
     background: #FFF;
-    color: #ca2295;
+    color: #CA2295;
     outline: 0; }
 
 .error {
@@ -542,19 +546,73 @@ a:focus {
   background: #a74848;
   padding: 3px 5px; }
 
-img {
-  max-width: 100%; }
+.home .intro {
+  background: url("/images/home.png") no-repeat center center; }
+  .home .intro .container {
+    padding: 150px 0; }
+  .home .intro p {
+    color: #FFF;
+    margin: 40px 0; }
+.home h2 {
+  font-family: 'Sacramento', cursive;
+  font-size: 3.5em; }
 
-.festival-container {
-  background: url("/images/festival.png") no-repeat center center;
+.playlist-container .row {
+  margin: 20px 0; }
+.playlist-container .row:nth-child(even) .playlist-preview:nth-child(odd) .title {
+  background: #CA2295;
+  color: #FFF; }
+.playlist-container .row:nth-child(even) .playlist-preview:nth-child(even) .title {
+  background: #dcde56;
+  color: #023749; }
+.playlist-container .row:nth-child(odd) .playlist-preview:nth-child(even) .title {
+  background: #CA2295;
+  color: #FFF; }
+.playlist-container .row:nth-child(odd) .playlist-preview:nth-child(odd) .title {
+  background: #dcde56;
+  color: #023749; }
+
+.playlist-preview .overlay-container {
+  height: 200px;
+  position: relative;
+  overflow: hidden; }
+.playlist-preview .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.15); }
+.playlist-preview img {
+  -webkit-transform-origin: top center;
+  -moz-transform-origin: top center;
+  -ms-transform-origin: top center;
+  -o-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-transform: scale(1.55);
+  -moz-transform: scale(1.55);
+  -ms-transform: scale(1.55);
+  -o-transform: scale(1.55);
+  transform: scale(1.55); }
+.playlist-preview .title {
+  bottom: 5px;
+  font-size: 18px;
+  left: 0;
+  padding: 5px 20px;
+  position: absolute; }
+
+.intro {
   background-size: cover;
   min-height: 55%; }
-  .festival-container .container {
+  .intro .container {
     padding: 100px 0;
     width: 70%; }
-  .festival-container p {
+  .intro p {
     font-size: 18px;
     line-height: 26px; }
+
+.festival-container {
+  background: url("/images/festival.png") no-repeat center center; }
   .festival-container form {
     margin: 50px 0 0;
     text-align: center; }
@@ -569,7 +627,7 @@ img {
     padding-top: 10px; }
 
 .button-container {
-  background: #56ded3; }
+  background: #56DED3; }
 
 .pseudo-menu {
   background: #c1f3ef;
@@ -585,7 +643,7 @@ img {
   margin-bottom: 40px; }
 
 .playlist-container {
-  background: #56ded3;
+  background: #56DED3;
   color: #FFF;
   margin: 0px auto;
   padding: 40px 0 20px; }
@@ -622,7 +680,7 @@ ol > li:nth-child(odd) {
   padding: 10px 0;
   text-align: center; }
   .footer a {
-    color: #333333;
+    color: #333;
     font-weight: 500; }
     .footer a:hover {
       color: #000; }
@@ -651,3 +709,5 @@ ol > li:nth-child(odd) {
 
   .btn {
     font-size: 17px; } }
+
+/*# sourceMappingURL=style.css.map */
