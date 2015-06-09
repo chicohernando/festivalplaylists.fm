@@ -558,11 +558,12 @@ ul {
   padding: 3px 5px; }
 
 .home .intro {
-  background: url("/images/home.png") no-repeat center center; }
+  background: url("/images/home.png") no-repeat center center;
+  background-size: cover;
+  min-height: 55%; }
   .home .intro .container {
     padding: 150px 0; }
   .home .intro p {
-    color: #FFF;
     margin: 40px 0; }
 .home h2 {
   font-family: 'Sacramento', cursive;
@@ -612,6 +613,28 @@ ul {
   padding: 5px 20px;
   position: absolute; }
 
+.playlist-page .overlay {
+  min-height: 70%;
+  overflow: hidden;
+  position: relative; }
+.playlist-page .overlay-inner {
+  background: rgba(25, 25, 25, 0.7);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0; }
+.playlist-page img.background {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  /* Set up positioning */
+  position: absolute;
+  bottom: 0;
+  left: 0; }
 .playlist-page .footer {
   background: #023749;
   color: #FFF;
@@ -625,30 +648,26 @@ ul {
   .playlist-page .footer span {
     margin-top: 20px; }
 
-.intro {
-  background-size: cover;
-  min-height: 55%; }
-  .intro .container {
-    padding: 100px 0;
-    width: 70%; }
-  .intro p {
-    font-size: 18px;
-    line-height: 26px; }
+.intro .container {
+  padding: 100px 0;
+  width: 70%; }
+.intro p {
+  color: #FFF;
+  font-size: 18px;
+  line-height: 26px; }
 
-.festival-container {
-  background: url("/images/festival.png") no-repeat center center; }
-  .festival-container form {
-    margin: 50px 0 0;
-    text-align: center; }
-  .festival-container input[type="text"] {
-    border: 0;
-    font-size: 20px;
-    padding: 7px 10px;
-    width: 270px; }
-  .festival-container .form-help {
-    font-size: 16px;
-    font-weight: 500;
-    padding-top: 10px; }
+.festival-container form {
+  margin: 50px 0 0;
+  text-align: center; }
+.festival-container input[type="text"] {
+  border: 0;
+  font-size: 20px;
+  padding: 7px 10px;
+  width: 270px; }
+.festival-container .form-help {
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 10px; }
 
 .button-container {
   background: #56DED3; }
@@ -732,5 +751,37 @@ ol > li:nth-child(odd) {
 
   .btn {
     font-size: 17px; } }
+.image-test .overlay {
+  min-height: 70%;
+  overflow: hidden;
+  position: relative; }
+.image-test .overlay-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8); }
+.image-test .container {
+  padding: 100px 0;
+  width: 70%; }
+.image-test img.background {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  /* Set up positioning */
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+.image-test p {
+  font-size: 18px;
+  line-height: 26px; }
+.image-test.option-2 {
+  color: #FFF; }
+  .image-test.option-2 .overlay-inner {
+    background: rgba(25, 25, 25, 0.7); }
 
 /*# sourceMappingURL=style.css.map */

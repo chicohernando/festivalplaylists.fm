@@ -1,11 +1,12 @@
 .home {
   .intro {
     background: url('/images/home.png') no-repeat center center;
+    background-size: cover;
+    min-height: 55%;
     .container {
       padding: 150px 0;
     }
     p {
-      color: #FFF;
       margin: 40px 0;
     }
   }
