@@ -548,6 +548,10 @@ ul {
   margin: 0;
   padding: 0; }
 
+.horizontal li {
+  display: inline-block;
+  margin: 0 10px; }
+
 .error {
   color: #fff;
   background: #a74848;
@@ -607,6 +611,19 @@ ul {
   left: 0;
   padding: 5px 20px;
   position: absolute; }
+
+.playlist-page .footer {
+  background: #023749;
+  color: #FFF;
+  padding: 20px 0; }
+  .playlist-page .footer .container {
+    width: 80%; }
+  .playlist-page .footer h5 {
+    margin: 10px 0 0; }
+  .playlist-page .footer a {
+    color: #dcde56; }
+  .playlist-page .footer span {
+    margin-top: 20px; }
 
 .intro {
   background-size: cover;
@@ -715,19 +732,5 @@ ol > li:nth-child(odd) {
 
   .btn {
     font-size: 17px; } }
-.playlist-page .footer {
-  background: #023749;
-  color: #FFF;
-  padding: 30px 0; }
-  .playlist-page .footer .container {
-    width: 60%; }
-  .playlist-page .footer h5 {
-    margin: 10px 0 0; }
-  .playlist-page .footer a {
-    color: #dcde56; }
-  .playlist-page .footer ul {
-    margin: 10px 0; }
-  .playlist-page .footer span {
-    margin-top: 20px; }
 
 /*# sourceMappingURL=style.css.map */

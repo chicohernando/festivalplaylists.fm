@@ -10,6 +10,7 @@
 
 // individual pages
 @import "pages/home";
+@import "pages/playlist";
 
 .intro {
   background-size: cover;
@@ -142,28 +143,5 @@ ol>li:nth-child(odd) {
   }
   .btn {
     font-size: 17px;
-  }
-}
-
-.playlist-page {
-  .footer {
-    background: $navy;
-    color: #FFF;
-    padding: 30px 0;
-    .container {
-      width: 60%;
-    }
-    h5 {
-      margin: 10px 0 0;
-    }
-    a {
-      color: $lime;
-    }
-    ul {
-      margin: 10px 0;
-    }
-    span {
-      margin-top: 20px;
-    }
   }
 }

@@ -1,0 +1,19 @@
+.playlist-page {
+  .footer {
+    background: $navy;
+    color: #FFF;
+    padding: 20px 0;
+    .container {
+      width: 80%;
+    }
+    h5 {
+      margin: 10px 0 0;
+    }
+    a {
+      color: $lime;
+    }
+    span {
+      margin-top: 20px;
+    }
+  }
+}

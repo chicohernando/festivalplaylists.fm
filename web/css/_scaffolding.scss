@@ -63,6 +63,13 @@ ul {
   padding: 0;
 }
 
+.horizontal {
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}
+
 .error {
   color: #fff;
   background: $errorColor;
