@@ -622,6 +622,8 @@ ul {
     margin: 10px 0 0; }
   .playlist-page .footer a {
     color: #dcde56; }
+  .playlist-page .footer a:hover {
+    color: #FFF; }
   .playlist-page .footer span {
     margin-top: 20px; }
 
