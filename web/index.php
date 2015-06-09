@@ -55,14 +55,14 @@
 		if (!isset($app['playlists'][$slug])) {
 			return $app->abort(404, 'No playlist found.');
 		}
-		
+
 		$playlist = $app['playlists'][$slug];
 		$md5_uri = md5($playlist['spotify_uri']);
 
 		if (file_exists($md5_uri)) {
 			$playlist_json = file_get_contents($md5_uri);
 		} else {
-			$playlist_json = file_get_contents("http://tomashenden.com/projects/spotify-php-playlist.php?uri=" . $playlist_uri . "&output=json");
+			$playlist_json = file_get_contents("http://tomashenden.com/projects/spotify-php-playlist.php?uri=" . $playlist['spotify_uri'] . "&output=json");
 			file_put_contents($md5_uri, $playlist_json);
 		}
 
