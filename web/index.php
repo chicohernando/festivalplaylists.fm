@@ -36,8 +36,7 @@
 	 * Homepage
 	 */
 	$app->get('/', function() use($app) { 
-		return $app->redirect($app["url_generator"]->generate("playlist", array('slug' => 'chicago-riot-fest-2015')));
-	    return $app['twig']->render('index.html.twig', array(
+		return $app['twig']->render('index.html.twig', array(
 	        'playlists' => $app['playlists']
 	    ));
 	})->bind('home');
@@ -78,7 +77,8 @@
 			'playlist_title' => $playlist['name'],
 			'tracks' => $tracks,
 			'song_count' => count($playlist_json->tracks),
-			'content' => $playlist['content']
+			'content' => $playlist['content'],
+			'playlists' => $app['playlists']
 	    ));
 	})->bind('playlist');
 	
