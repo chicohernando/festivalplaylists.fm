@@ -168,7 +168,7 @@
 		$app['sitemap']->addEntry($app['url_generator']->generate('home', array(), true), 1, 'daily');
 		// Need to refactor this once there are significantly more playlits
 		foreach ($app['playlists'] as $playlist) {
-			$app['sitemap']->addEntry($app['url_generator']->generate('playlist', array('slug' => $playlist['slug']), true), 2, 'monthly');
+			$app['sitemap']->addEntry($app['url_generator']->generate('playlist', array('slug' => $playlist['slug']), true), 0.9, 'monthly');
 		}
 
 		return new Response($app['sitemap']->generate(), 200, array('Content-Type' => 'application/xml'));
