@@ -4,7 +4,7 @@ playlists:
    name: Chicago Riot Fest 2015
    content: >
           '<p>
-             <a href="http://riotfest.org/chicago/" target="_blank">{{ playlist_title }}</a> to be held in Douglas Park, Chicago IL the weekend of September 11-13 2015.
+             <a href="http://riotfest.org/chicago/" target="_blank">{{ playlist_title }}</a> to be held in Douglas Park, Chicago IL the weekend of September 11-13 2015. <em>Update: System of a Down and The Prodigy added to Riot Fest 2015!</em>
            </p>'
    image: images/playlists/chicago-riot-fest-2015.jpg
    spotify_uri: spotify:user:easander:playlist:3jxmUYBHHYuZEyAaXKF76K
