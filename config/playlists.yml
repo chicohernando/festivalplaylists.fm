@@ -5,6 +5,8 @@ playlists:
    content: >
           '<p>
              <a href="http://riotfest.org/toronto/" target="_blank">{{ playlist_title }}</a> will be held in Downsview Park (35 Carl Hall Rd) Toronto, ON September 19th and 20th 2015.
+             {{ playlist_title }} will feature headliners of <em>Alexisonfire</em>, <em>Weezer</em> (playing Pinkerton and the Blue Album), <em>The Prodigy</em>, and <em>Wu-Tang Clan</em>.
+             <em>Rancid</em> will also be playing ...And Out Come The Wolves.
            </p>'
    image: images/playlists/toronto-riot-fest-2015.jpg
    spotify_uri: spotify:user:easander:playlist:4rGvL29N07RVrgKCVU5akZ
@@ -13,7 +15,11 @@ playlists:
    name: Chicago Riot Fest 2015
    content: >
           '<p>
-             <a href="http://riotfest.org/chicago/" target="_blank">{{ playlist_title }}</a> to be held in Douglas Park, Chicago IL the weekend of September 11-13 2015. <em>Update: System of a Down, The Prodigy, 88 Fingers Louie, and Chef'special added to Riot Fest 2015!</em>
+             <a href="http://riotfest.org/chicago/" target="_blank">{{ playlist_title }}</a> to be held in Douglas Park, Chicago IL the weekend of September 11-13 2015.
+             {{ playlist_title }} will feature headliners of <em>No Doubt</em>, <em>System of a Down</em>, <em>Modest Mouse</em>, <em>Faith No More</em>, and <em>The Prodigy</em>.
+             <em>Rancid</em> will also be playing ...And Out Come The Wolves in its entirety.
+             <br /><br />
+             <em>Update: System of a Down, The Prodigy, 88 Fingers Louie, and Chef'special added to Riot Fest 2015!</em>
            </p>'
    image: images/playlists/chicago-riot-fest-2015.jpg
    spotify_uri: spotify:user:easander:playlist:3jxmUYBHHYuZEyAaXKF76K
