@@ -1,4 +1,14 @@
 playlists:
+ denver-riot-fest-and-rodeo-2015:
+   slug: denver-riot-fest-and-rodeo-2015
+   name: Denver Riot Fest and Rodeo 2015
+   content: >
+          '<p>
+             <a href="http://riotfest.org/denver/" target="_blank">{{ playlist_title }}</a> will be held at National Western Complex (4655 Humboldt St, Denver CO) the weekend of August 28th, 29th, and 30th 2015.
+             {{ playlist_title }} will feature headliners of <em>System of a Down</em>, <em>Iggy Pop</em>, <em>Modest Mouse</em>, <em>Pixies</em>, <em>The Prodigy</em>, and <em>Snoop Dogg</em>.
+           </p>'
+   image: images/playlists/denver-riot-fest-2015.jpg
+   spotify_uri: spotify:user:easander:playlist:3oTi3mzcodmZoE8yLsLbLk
  toronto-riot-fest-2015:
    slug: toronto-riot-fest-2015
    name: Toronto Riot Fest 2015
