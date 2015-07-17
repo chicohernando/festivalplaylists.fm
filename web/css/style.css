@@ -627,7 +627,7 @@ ul {
   position: absolute; }
 
 .playlist-page .overlay {
-  min-height: 70%;
+  min-height: 85%;
   overflow: hidden;
   position: relative; }
 .playlist-page .overlay-inner {
@@ -663,11 +663,14 @@ ul {
   .playlist-page .footer span {
     margin-top: 20px; }
 
+@media screen and (max-width: 768px) {
+  .playlist-page .overlay {
+    min-height: 130%; } }
 .intro .container {
   padding: 100px 0;
   width: 70%; }
 .intro p {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 26px; }
 
 .pseudo-menu {
@@ -735,7 +738,13 @@ ul {
     margin: 0 -10px; }
 
   .btn {
-    font-size: 17px; } }
+    font-size: 17px; }
+
+  .intro p {
+    font-size: 16px; }
+
+  .intro .container {
+    padding-top: 30px; } }
 .image-test .overlay {
   min-height: 70%;
   overflow: hidden;

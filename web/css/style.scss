@@ -18,7 +18,7 @@
     width: 70%;
   }
   p {
-    font-size: $baseFontSize + 4;
+    font-size: $baseFontSize + 2;
     line-height: 26px;
   }
 }
@@ -103,6 +103,12 @@
   }
   .btn {
     font-size: 17px;
+  }
+  .intro p {
+    font-size: $baseFontSize + 2px;
+  }
+  .intro .container {
+    padding-top: 30px;
   }
 }
 
