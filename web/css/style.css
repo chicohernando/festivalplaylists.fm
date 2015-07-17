@@ -552,6 +552,19 @@ ul {
   display: inline-block;
   margin: 0 10px; }
 
+.zebra-list {
+  border: 1px solid #38d8cb;
+  font-size: 16px;
+  list-style-position: inside;
+  margin: 0;
+  padding: 5px; }
+  .zebra-list li {
+    padding: 2px 5px; }
+  .zebra-list li:nth-child(odd) {
+    background-color: #38d8cb; }
+  .zebra-list span {
+    float: right; }
+
 .error {
   color: #fff;
   background: #a74848;
@@ -645,6 +658,8 @@ ul {
     margin: 10px 0 0; }
   .playlist-page .footer a {
     color: #dcde56; }
+  .playlist-page .footer a:hover {
+    color: #FFF; }
   .playlist-page .footer span {
     margin-top: 20px; }
 
@@ -656,25 +671,10 @@ ul {
   font-size: 18px;
   line-height: 26px; }
 
-.festival-container form {
-  margin: 50px 0 0;
-  text-align: center; }
-.festival-container input[type="text"] {
-  border: 0;
-  font-size: 20px;
-  padding: 7px 10px;
-  width: 270px; }
-.festival-container .form-help {
-  font-size: 16px;
-  font-weight: 500;
-  padding-top: 10px; }
-
-.button-container {
-  background: #56DED3; }
-
 .pseudo-menu {
   background: #c1f3ef;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  display: none;
   padding: 10px;
   width: 100%; }
   .pseudo-menu .btn {
@@ -703,20 +703,6 @@ ul {
   padding-top: 10px;
   padding-right: 25px;
   text-align: right; }
-
-ol.grid-8 {
-  border: 1px solid #38d8cb;
-  font-size: 16px;
-  list-style-position: inside;
-  margin: 0;
-  padding: 5px; }
-  ol.grid-8 li {
-    padding: 2px 5px; }
-  ol.grid-8 span {
-    float: right; }
-
-ol > li:nth-child(odd) {
-  background-color: #38d8cb; }
 
 .footer {
   font-size: 12px;

@@ -1,41 +1,67 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<div class="festival-container">
-			<div class="container">
-				<img src="images/logo.png">
-				<p>
-				  Bacon ipsum dolor sit amet ground round strip steak jerky salami pork chop. Boudin tri-tip hamburger pork belly tongue drumstick biltong venison swine bresaola beef tenderloin ham hock. Venison strip steak meatloaf, pancetta ham hock turducken beef pork loin leberkas ground round spare ribs tail. Tenderloin boudin short loin pork belly. Ball tip ribeye chuck fatback short ribs turducken turkey, kevin boudin brisket porchetta.
-				</p>
-				<form id="search_form" method="POST" action="{{ url('artist-search') }}">
-					<input type="text" name="artist_name" placeholder="Enter an artist" />
-					<input id="search" class="btn" type="submit" value="Get Songs" />
-					<div class="form-help">
-						<span>
-						</span>
-					</div>
-				</form>
-		    </div>
-		</div>
+  <head>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link href="css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>concert playlists | flipthewaffle.com | easily digestable concert playlists</title>
+    <meta name="description" content="Flipthewaffle.com is your source for Spotify concert playlists." />
+    <meta name="keywords" content="concert, playlist, spotify, spotify playlist" />
+  </head>
+  <body class="home">
+  	<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		<div class="playlist-container">
-			<div class="container playlist" id="results">
-				<button class="btn centered" data-id="save-to-spotify">
-		            Add this playlist to Spotify
-		        </button>
+      ga('create', 'UA-63501311-1', 'auto');
+      ga('send', 'pageview');
 
-			</div>
-		</div>
+    </script>
+    <div class="intro">
+      <div class="container">
+        <img src="/images/logo-green.png">
+        <p>
+          Do you like music? Do you like concerts? Maybe you like playlists to get preppin' ready for your concert blowout experience.  If you do then this site is most definitely for you.
+        </p>
+        <p>
+          These playlists are 100% artisanally crafted for your auditory pleasure.  Flip The Waffle playlists are easily digestable concert playlists.  What does "easily digestable concert playlist" mean?  It means that these playlists are easy to follow on Spotify.  These playlists will rock your socks off.
+        </p>
+      </div>
+    </div>
+    <div class="playlist-container">
+      <div class="container">
+        <div class="row">
+          <h2 class="centered">
+            some of our playlists...
+          </h3>
+        </div>
+        {% for row in playlists|batch(3) %}
+        	<div class="row">
+	        	{% for slug,playlist in row %}
+	        		<div class="grid-4 playlist-preview">
+		            	<a href="{{ path('playlist', {slug: slug}) }}">
+			              <div class="overlay-container">
+			                <img alt="{{ playlist.name }}" src="{{ playlist.image }}">
+			                <div class="overlay">
+			                  <span class="title">{{ playlist.name }}</span>
+			                </div>
+			              </div>
+		            	</a>
+		          	</div>
+	        	{% endfor %}
+        	</div>
+        {% endfor %}
 
-		<footer class="footer">
-			<span>
-				Created by <a href="http://www.github.com/chicohernando">chicohernando</a>. Designed by <a href="http://www.github.com/niederer">niederer</a>.
-			</span>
-		</footer>
-		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src="/js/index.js"></script>
-	</body>
+      </div>
+    </div>
+    <footer class="footer">
+      <span class="centered">Created by <a href=
+      "http://easander.com/">chicohernando</a>. Designed by
+      <a href="http://www.github.com/niederer">niederer</a>.</span>
+    </footer>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  </body>
 </html>

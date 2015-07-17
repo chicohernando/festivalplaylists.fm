@@ -27,7 +27,7 @@ jQuery.fn.animateAuto = function(prop, speed, callback){
     });
 };
 
-jQuery('.pseudo-menu').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').hide();
+jQuery('.pseudo-menu').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500');
 
 scrollIntervalID = setInterval(stickIt, 10);
 

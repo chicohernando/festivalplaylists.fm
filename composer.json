@@ -3,6 +3,7 @@
         "silex/silex": "~1.2",
         "twig/twig": ">=1.8,<2.0-dev",
         "symfony/twig-bridge": "~2.3",
-        "symfony/yaml": "~2.7.0"
+        "symfony/yaml": "~2.7.0",
+        "tm/silex-sitemap-service-provider": "1.0.0"
     }
 }

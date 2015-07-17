@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "28fe5309a2d444092808c543d48c28a2",
+    "hash": "bbc4d501a116bb48c43610c07142ea8a",
     "packages": [
         {
             "name": "pimple/pimple",
@@ -624,17 +624,64 @@
             "time": "2015-05-02 15:21:08"
         },
         {
-            "name": "twig/twig",
-            "version": "v1.18.1",
+            "name": "tm/silex-sitemap-service-provider",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twigphp/Twig.git",
-                "reference": "9f70492f44398e276d1b81c1b43adfe6751c7b7f"
+                "url": "https://github.com/tommy-muehle/silex-sitemap-service-provider.git",
+                "reference": "6d2712a0fe2745a11e58f79a66b5a497cdd5aece"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/9f70492f44398e276d1b81c1b43adfe6751c7b7f",
-                "reference": "9f70492f44398e276d1b81c1b43adfe6751c7b7f",
+                "url": "https://api.github.com/repos/tommy-muehle/silex-sitemap-service-provider/zipball/6d2712a0fe2745a11e58f79a66b5a497cdd5aece",
+                "reference": "6d2712a0fe2745a11e58f79a66b5a497cdd5aece",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "behat/behat": "3.0.14",
+                "phpunit/phpunit": "4.4.0",
+                "silex/silex": "1.2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "TM": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tommy Muehle",
+                    "email": "tommy.muehle@gmail.com",
+                    "homepage": "https://tommy-muehle.de"
+                }
+            ],
+            "description": "Simple service provider to generate a xml-sitemap.",
+            "keywords": [
+                "Sitemap",
+                "silex",
+                "xml"
+            ],
+            "time": "2014-12-23 19:12:59"
+        },
+        {
+            "name": "twig/twig",
+            "version": "v1.18.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "e8e6575abf6102af53ec283f7f14b89e304fa602"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/e8e6575abf6102af53ec283f7f14b89e304fa602",
+                "reference": "e8e6575abf6102af53ec283f7f14b89e304fa602",
                 "shasum": ""
             },
             "require": {
@@ -678,7 +725,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-04-19 08:30:27"
+            "time": "2015-06-06 23:31:24"
         }
     ],
     "packages-dev": [],
