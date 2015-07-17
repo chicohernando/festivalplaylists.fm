@@ -10,7 +10,7 @@ $grey:     #333;
 // Scaffolding
 // -------------------------
 $bodyBackground:        $teal !default;
-$textColor:             $grey !default;
+$textColor:             #FFF;
 $errorColor:			      $red;
 
 // Typography
@@ -30,5 +30,5 @@ $headingsColor:         inherit !default;
 
 // Links
 // -------------------------
-$linkColor:             #1188bd !default;
-$linkColorHover:        darken($linkColor, 15%) !default;
+$linkColor:             $lime !default;
+$linkColorHover:        lighten($linkColor, 15%) !default;
