@@ -78,6 +78,7 @@
 			'tracks' => $tracks,
 			'song_count' => count($playlist_json->tracks),
 			'content' => $playlist['content'],
+			'image' => $playlist['image'],
 			'playlists' => $app['playlists']
 	    ));
 	})->bind('playlist');
