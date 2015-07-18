@@ -1,6 +1,6 @@
 .playlist-page {
   .overlay {
-    min-height: 85%;
+    min-height: 80%;
     overflow: hidden;
     position: relative;
   }
@@ -50,6 +50,6 @@
 
 @media screen and (max-width: $grid-float-breakpoint) {
   .playlist-page .overlay {
-    min-height: 130%;
+    min-height: 200%;
   }
 }

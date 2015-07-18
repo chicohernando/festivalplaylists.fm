@@ -627,7 +627,7 @@ ul {
   position: absolute; }
 
 .playlist-page .overlay {
-  min-height: 85%;
+  min-height: 80%;
   overflow: hidden;
   position: relative; }
 .playlist-page .overlay-inner {
@@ -665,7 +665,7 @@ ul {
 
 @media screen and (max-width: 768px) {
   .playlist-page .overlay {
-    min-height: 130%; } }
+    min-height: 200%; } }
 .intro .container {
   padding: 100px 0;
   width: 70%; }
