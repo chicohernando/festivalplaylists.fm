@@ -573,6 +573,9 @@ ul {
   background: #a74848;
   padding: 3px 5px; }
 
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.4em; } }
 .home .intro {
   background: url("/images/home.png") no-repeat center center;
   background-size: cover;
@@ -732,6 +735,9 @@ ul {
     float: none;
     margin: 0 auto;
     padding: 7px; }
+
+  .logo {
+    max-width: 70%; }
 
   .artist-name {
     margin-top: 10px;

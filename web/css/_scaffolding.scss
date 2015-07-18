@@ -99,3 +99,9 @@ ul {
   background: $errorColor;
   padding: 3px 5px;
 }
+
+@media screen and (max-width: $grid-float-breakpoint) {
+  h1 {
+    font-size: 1.4em;
+  }
+}
