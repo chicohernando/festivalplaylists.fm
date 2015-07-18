@@ -7,7 +7,7 @@ playlists:
              <a href="http://riotfest.org/denver/" target="_blank">{{ playlist_title }}</a> will be held at National Western Complex (4655 Humboldt St, Denver CO) the weekend of August 28th, 29th, and 30th 2015.
              {{ playlist_title }} will feature headliners of <em>System of a Down</em>, <em>Iggy Pop</em>, <em>Modest Mouse</em>, <em>Pixies</em>, <em>The Prodigy</em>, and <em>Snoop Dogg</em>.
           </p>
-   image: images/playlists/denver-riot-fest-2015.jpg
+   image: /images/playlists/denver-riot-fest-2015.jpg
    spotify_uri: spotify:user:easander:playlist:3oTi3mzcodmZoE8yLsLbLk
  toronto-riot-fest-2015:
    slug: toronto-riot-fest-2015
@@ -18,7 +18,7 @@ playlists:
              {{ playlist_title }} will feature headliners of <em>Alexisonfire</em>, <em>Weezer</em> (playing Pinkerton and the Blue Album), <em>The Prodigy</em>, and <em>Wu-Tang Clan</em>.
              <em>Rancid</em> will also be playing ...And Out Come The Wolves.
           </p>
-   image: images/playlists/toronto-riot-fest-2015.jpg
+   image: /images/playlists/toronto-riot-fest-2015.jpg
    spotify_uri: spotify:user:easander:playlist:4rGvL29N07RVrgKCVU5akZ
  chicago-riot-fest-2015:
    slug: chicago-riot-fest-2015
@@ -31,17 +31,17 @@ playlists:
              <br /><br />
              <em>Update: System of a Down, The Prodigy, 88 Fingers Louie, and Chef'special added to Riot Fest 2015!</em>
           </p>
-   image: images/playlists/chicago-riot-fest-2015.jpg
+   image: /images/playlists/chicago-riot-fest-2015.jpg
    spotify_uri: spotify:user:easander:playlist:3jxmUYBHHYuZEyAaXKF76K
  chicago-riot-fest-2014:
    slug: chicago-riot-fest-2014
    name: Chicago Riot Fest 2014
    content: ''
-   image: images/playlists/chicago-riot-fest-2014.jpg
+   image: /images/playlists/chicago-riot-fest-2014.jpg
    spotify_uri: spotify:user:easander:playlist:3fl2SYC95YZL9Lsmm3bXl4
  summerland-tour-2014:
    slug: summerland-tour-2014
    name: Summerland Tour 2014
    content: ''
-   image: images/playlists/summerland-tour-2014.jpg
+   image: /images/playlists/summerland-tour-2014.jpg
    spotify_uri: spotify:user:easander:playlist:57fCqeT985hMUNrAizJNCh
