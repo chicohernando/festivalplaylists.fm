@@ -521,6 +521,9 @@ body {
 img {
   max-width: 100%; }
 
+h1 {
+  line-height: 1em; }
+
 a {
   color: #dcde56;
   text-decoration: none; }
