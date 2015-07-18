@@ -21,11 +21,11 @@
 
     </script>
     <div class="overlay">
-      <img src="../{{ image }}" class="background">
+      <img src="{{ image }}" class="background" alt="{{ playlist_title}}">
       <div class="intro overlay-inner">
         <div class="container">
           <img src="/images/logo-green.png" class="logo">
-          <h1>{{ playlist_title }}</h1>
+          <h1>{{ playlist_title }} Playlist</h1>
           {{ include(template_from_string(content)) }}
           <p>
              Easily add the {{ playlist_title }} playlist to your Spotify account using the on screen button. You will be prompted to login to your Spotify account before being allowed to add the playlist. Once added, you will be notified if the playlist ever changes and your playlist will be updated automatically.
