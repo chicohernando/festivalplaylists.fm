@@ -1,4 +1,14 @@
 playlists:
+ chicago-riot-fest-2015-friday:
+   slug: chicago-riot-fest-2015-friday
+   name: Chicago Riot Fest 2015 Friday
+   content: >
+          <p>
+             <a href="http://riotfest.org/chicago/" target="_blank">{{ playlist_title }}</a> to be held in Douglas Park, Chicago IL the weekend of September 11-13 2015.
+             {{ playlist_title }} will feature headliners of <em>No Doubt</em>, <em>Faith No More</em>, <em>Motörhead</em>, <em>Ice Cube</em>, and <em>Alkaline Trio</em>.
+          </p>
+   image: /images/playlists/chicago-riot-fest-2015-friday.jpg
+   spotify_uri: spotify:user:easander:playlist:7BDifAdjeF0sEJbkEgKrI6
  denver-riot-fest-and-rodeo-2015:
    slug: denver-riot-fest-and-rodeo-2015
    name: Denver Riot Fest and Rodeo 2015
