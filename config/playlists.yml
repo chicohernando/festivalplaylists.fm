@@ -1,4 +1,18 @@
 playlists:
+ seattle-bumbershoot-2015-saturday:
+   slug: seattle-bumbershoot-2015-saturday
+   name: Seattle Bumbershoot 2015 Saturday
+   content: >
+          <p>
+             <a href="http://bumbershoot.com/full_lineup" target="_blank">{{ playlist_title }}</a> will be held Saturday, September 5th 2015 in Seattle, Washington.  {{ playlist_title }} will feature headliners of <em>The Weeknd</em>, <em>Chance The Rapper</em>,
+             <em>Cake</em>, and <em>Fitz and The Tantrums</em>.
+          </p>
+          <p>
+             <a href="http://bumbershoot.com/home" target="_blank">Bumbershoot</a> is an annual international music and arts festival held in Seattle, Washington. One of North America's largest such festivals,
+             it takes place every Labor Day weekend at the 74-acre Seattle Center, which was built for the 1962 World's Fair. Seattle Center includes both indoor theaters and outdoor stages.
+          </p>
+   image: /images/playlists/seattle-bumbershoot-2015-saturday.png
+   spotify_uri: spotify:user:easander:playlist:7rSgqQlx6KJ6xDCISKjpG3
  chicago-riot-fest-2015-sunday:
    slug: chicago-riot-fest-2015-sunday
    name: Chicago Riot Fest 2015 Sunday
