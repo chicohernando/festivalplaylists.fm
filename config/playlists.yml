@@ -1,4 +1,18 @@
 playlists:
+ seattle-bumbershoot-2015-sunday:
+   slug: seattle-bumbershoot-2015-sunday
+   name: Seattle Bumbershoot 2015 Sunday
+   content: >
+          <p>
+             <a href="http://bumbershoot.com/full_lineup" target="_blank">{{ playlist_title }}</a> will be held Sunday, September 6th 2015 in Seattle, Washington.  {{ playlist_title }} will feature headliners of <em>Faith No More</em>, <em>Zedd</em>,
+             <em>Social Distortion</em>, and <em>Brand New</em>.
+          </p>
+          <p>
+             <a href="http://bumbershoot.com/home" target="_blank">Bumbershoot</a> is an annual international music and arts festival held in Seattle, Washington. One of North America's largest such festivals,
+             it takes place every Labor Day weekend at the 74-acre Seattle Center, which was built for the 1962 World's Fair. Seattle Center includes both indoor theaters and outdoor stages.
+          </p>
+   image: /images/playlists/seattle-bumbershoot-2015-sunday.jpg
+   spotify_uri: spotify:user:easander:playlist:0itlK0bKwaqQfUwr23a8h9
  seattle-bumbershoot-2015-saturday:
    slug: seattle-bumbershoot-2015-saturday
    name: Seattle Bumbershoot 2015 Saturday
