@@ -1,4 +1,15 @@
 playlists:
+ chicago-jazz-festival-2015:
+   slug: chicago-jazz-festival-2015
+   name: Chicago Jazz Festival 2015
+   content: >
+          <p>
+            <a href="http://www.cityofchicago.org/city/en/depts/dca/supp_info/chicago_jazz_festival.html" target="_blank">{{ playlist_title }}</a> is a FREE jazz festival that will be held in Chicago, IL.  It will
+            take place Labor Day weekend September 3 - 6, 2015 at the Chicago Cultural Center and Millennium Park (Jay Pritzker Pavilion).  The Chicago Jazz Festival has been demonstrating the wide array of talents
+            in the jazz community since 1979.
+          </p>
+   image: /images/playlists/chicago-jazz-festival-2015.jpg
+   spotify_uri: spotify:user:easander:playlist:4iLPlfkzb77Vs3kMwUUQ4K
  seattle-bumbershoot-2015-sunday:
    slug: seattle-bumbershoot-2015-sunday
    name: Seattle Bumbershoot 2015 Sunday
