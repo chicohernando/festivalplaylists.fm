@@ -59,22 +59,32 @@
 			'/tracks'; // ?uris='+encodeURIComponent(tracks.join(','));
 
 		//TODO: slice on every 100
-		$.ajax(url, {
-			method: 'POST',
-			data: JSON.stringify(tracks),
-			dataType: 'json',
-			headers: {
-				'Authorization': 'Bearer ' + g_access_token,
-				'Content-Type': 'application/json'
-			},
-			success: function(r) {
-				console.log('add track response', r);
-				callback(r.id);
-			},
-			error: function(r) {
-				callback(null);
-			}
-		});
+		var chunks = chunk(tracks, 100);
+		for (c = 0; c < chunks.length; c++) {
+			$.ajax(url, {
+				method: 'POST',
+				data: JSON.stringify(chunks[c]),
+				dataType: 'json',
+				headers: {
+					'Authorization': 'Bearer ' + g_access_token,
+					'Content-Type': 'application/json'
+				},
+				success: function(r) {
+					console.log('add track response', r);
+					callback(r.id);
+				},
+				error: function(r) {
+					callback(null);
+				}
+			});
+		}
+	}
+
+	function chunk(arr, chunkSize) {
+	  var return_array = [];
+	  for (var i = 0,len = arr.length; i < len; i += chunkSize)
+	    return_array.push(arr.slice(i, i + chunkSize));
+	  return return_array;
 	}
 
 	function doit() {
