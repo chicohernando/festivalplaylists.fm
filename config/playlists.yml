@@ -1,4 +1,25 @@
 playlists:
+ rock-on-the-range-2016:
+   slug: rock-on-the-range-2016
+   name: Rock on the Range 2016
+   content: >
+          <p>
+            <a href="http://rockontherange.com/index.html" target="_blank">{{ playlist_title }}</a> is the tenth
+            anniversary of Rock on the Range.  {{ playlist_title }} will be the weekend of May 20 - 22, 2016 at
+            the <a
+            href="https://www.google.com/maps/dir//MAPFRE+Stadium,+One+Black+%26+Gold+Blvd,+Columbus,+OH+43211/@40.0090861,-82.9934167,17z/data=!4m13!1m4!3m3!1s0x883889536d498093:0x2b5cb386c60ffb9f!2sMAPFRE+Stadium!3b1!4m7!1m0!1m5!1m1!1s0x883889536d498093:0x2b5cb386c60ffb9f!2m2!1d-82.991228!2d40.009082" target="_blank">MAPFRE Stadium</a>
+            (One Black & Gold Boulevard Columbus, Ohio 43211). Rock on the Range isn't holding anything back
+            for their tenth anniversary as they will be featuring 56 bands during the three day span.
+          </p>
+          <p>
+            Headlining this years show will be <em>Red Hot Chili Peppers</em>, <em>Disturbed</em>, and <em>Rob Zombie</em>.
+            Other featured acts performing include <em>Megadeth</em>, <em>Death From Above 1979</em>, <em>Five Finger
+            Death Punch</em>, and the always fun <em>Steel Panther</em>!  <a
+            href="http://rockontherange.com/tickets_weekend.html" target="_blank">Go
+            get your tickets</a> while you still can.
+          </p>
+   image: /images/playlists/rock-on-the-range-2016.jpg
+   spotify_uri: spotify:user:easander:playlist:5p89Maiw94Vkxf8kkdRYbg
  chicago-jazz-festival-2015:
    slug: chicago-jazz-festival-2015
    name: Chicago Jazz Festival 2015
