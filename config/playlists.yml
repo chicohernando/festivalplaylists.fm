@@ -1,4 +1,19 @@
 playlists:
+ coachella-2016-friday:
+   slug: coachella-2016-friday
+   name: Coachella 2016 Friday
+   content: >
+          <p>
+             <a href="https://www.coachella.com/home/" target="_blank">{{ playlist_title }}</a> will be held Fridays, April 15th and 22nd 2016 in India, California at the Empire Polo Grounds.
+             {{ playlist_title }} will feature headliners of <em>Years &amp; Years</em>, <em>Volbeat</em>, <em>Unknown Mortal Orchestra</em>, and <em>Underworld</em>.
+          </p>
+          <p>
+             In 1999 Paul Tollett founded Coachella and features many genres of music, including rock, indie, hip hop, and electronic dance music.
+             Across the grounds, several stages continuously host live music.  View the <a href="https://www.coachella.com/lineup/" target="_blank">{{ playlist_title }} full lineup</a>
+             at Coachella's website.
+          </p>
+   image: /images/playlists/coachella-2016-friday.jpg
+   spotify_uri: spotify:user:easander:playlist:6NMNfWJwtc5yCRgKu1j37A
  rock-on-the-range-2016:
    slug: rock-on-the-range-2016
    name: Rock on the Range 2016
